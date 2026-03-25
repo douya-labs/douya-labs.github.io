@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { dailyEntries, todayEntry } from '../data/ai-daily'
+import { computed } from 'vue'
+import { dailyEntries, getEntryStats, todayEntry } from '../data/ai-daily'
 
 const recentEntries = dailyEntries.slice(0, 4)
+const todayStats = computed(() => getEntryStats(todayEntry))
 
 const highlights = [
   'Daily AI briefing',
@@ -34,7 +36,7 @@ const highlights = [
                 <p class="eyebrow">AI DAILY HOME</p>
                 <h1>每天把 AI 世界里真正值得看的东西，整理成一页。</h1>
                 <p class="hero__desc">
-                  首页只放概览，真正的日报内容放进单独详情页里。这个顶部卡片会承接每天的核心数据，未来会直接显示当天真实生成的内容。
+                  首页只放概览，真正的日报内容放进单独详情页里。顶部卡片现在已经直接承接当天日报的核心信息，后面可以继续无缝接自动生成的数据流。
                 </p>
               </div>
 
@@ -63,12 +65,12 @@ const highlights = [
                   <strong>{{ todayEntry.title }}</strong>
                 </div>
                 <div class="snapshot-item">
-                  <span>Summary</span>
-                  <strong>{{ todayEntry.summary }}</strong>
+                  <span>Coverage</span>
+                  <strong>{{ todayStats.totalItems }} items · 4 sections</strong>
                 </div>
                 <div class="snapshot-item">
-                  <span>Data mode</span>
-                  <strong>Seed now · real later</strong>
+                  <span>Reminder</span>
+                  <strong>{{ todayEntry.reminderSummary || '09:00 推送链接 + 一句话摘要' }}</strong>
                 </div>
               </section>
             </div>
