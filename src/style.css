@@ -85,15 +85,15 @@ a {
   padding: 22px 0 26px;
 }
 
-.hero--compact {
-  padding-bottom: 10px;
+.hero--home {
+  padding-bottom: 4px;
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 
 .brand {
@@ -119,15 +119,43 @@ a {
   font-size: 0.95rem;
 }
 
-.hero__content {
+.hero-home {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 24px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 18px;
+  align-items: stretch;
 }
 
-.hero__content--single {
-  grid-template-columns: 1fr;
+.hero-home__copy,
+.hero-panel,
+.daily-section-card,
+.daily-feature,
+.archive-card,
+.sprout-note,
+.project-card,
+.archive-summary {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(11, 16, 34, 0.62);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+
+.hero-home__copy {
+  padding: 26px;
+  overflow: hidden;
+}
+
+.hero-home__copy::before {
+  content: '';
+  position: absolute;
+  inset: -40% auto auto -10%;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(97, 255, 214, 0.18), transparent 68%);
+  pointer-events: none;
 }
 
 .eyebrow {
@@ -139,22 +167,23 @@ a {
 
 .hero h1,
 .section h2,
-.project-card h3,
 .daily-feature h3,
 .daily-section-card h3,
-.archive-summary h3 {
+.archive-summary h3,
+.hero-panel h2,
+.project-card h3 {
   margin: 0;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 8vw, 4.6rem);
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 8vw, 4.8rem);
+  line-height: 0.94;
   letter-spacing: -0.05em;
+  position: relative;
 }
 
 .hero__desc,
 .section__head p,
-.project-card p,
 .daily-section-card p,
 .daily-feature p,
 .archive-card p,
@@ -162,7 +191,10 @@ a {
 .archive-card small,
 .archive-summary p,
 .detail-nav,
-.text-link {
+.text-link,
+.hero-panel p,
+.hero-panel span,
+.project-card p {
   color: #99a9c2;
 }
 
@@ -170,6 +202,7 @@ a {
   max-width: 46rem;
   margin: 18px 0 0;
   font-size: 1.02rem;
+  position: relative;
 }
 
 .hero__actions,
@@ -179,6 +212,68 @@ a {
   gap: 12px;
   margin-top: 18px;
   flex-wrap: wrap;
+}
+
+.hero-highlights {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hero-highlights__item {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #dbe8ff;
+  font-size: 0.9rem;
+}
+
+.hero-panel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, rgba(20, 29, 56, 0.92), rgba(10, 16, 31, 0.92));
+}
+
+.hero-panel__badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(129, 247, 180, 0.12);
+  border: 1px solid rgba(129, 247, 180, 0.18);
+  color: #b4ffd0;
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+
+.hero-panel__date {
+  margin: 0 0 10px;
+  color: #8ea4bf;
+  font-size: 0.92rem;
+}
+
+.hero-panel h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.hero-panel__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 18px 0;
+}
+
+.hero-panel strong {
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
 .button {
@@ -217,101 +312,12 @@ a {
   font-size: 0.95rem;
 }
 
-.hero-card,
-.project-card,
-.daily-section-card,
-.daily-feature,
-.archive-card,
-.sprout-note,
-.status-card,
-.archive-summary {
-  position: relative;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(11, 16, 34, 0.62);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
-}
-
-.hero-card {
-  padding: 1px;
-  overflow: hidden;
-}
-
-.hero-card__glow {
-  position: absolute;
-  inset: -20%;
-  background: conic-gradient(from 180deg, rgba(77, 255, 184, 0.5), rgba(95, 111, 255, 0.4), transparent 60%);
-  filter: blur(40px);
-  opacity: 0.65;
-}
-
-.hero-card__inner {
-  position: relative;
-  padding: 22px;
-  border-radius: 23px;
-  background: linear-gradient(180deg, rgba(8, 12, 26, 0.92), rgba(11, 17, 34, 0.88));
-}
-
-.terminal-bar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.terminal-bar span {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.22);
-}
-
-.terminal-content {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
-  color: #d7e7ff;
-}
-
-.terminal-content p {
-  margin: 0;
-}
-
-.terminal-content p + p {
-  margin-top: 10px;
-}
-
-.prompt {
-  color: #81f7b4;
-}
-
-.signal-list {
-  list-style: none;
-  padding: 0;
-  margin: 18px 0 0;
-  display: grid;
-  gap: 12px;
-}
-
-.signal-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #dce8fb;
-}
-
-.signal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #86ffc0, #5b7cff);
-  box-shadow: 0 0 18px rgba(97, 255, 214, 0.8);
-}
-
 .section {
   padding: 20px 0 48px;
+}
+
+.section--tight {
+  padding-top: 12px;
 }
 
 .detail-page {
@@ -379,28 +385,6 @@ a {
   margin-top: 12px;
   color: #8fa3bd;
   font-size: 0.92rem;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.status-card {
-  padding: 18px;
-}
-
-.status-card span {
-  display: block;
-  color: #88a1c2;
-  font-size: 0.9rem;
-}
-
-.status-card strong {
-  display: block;
-  margin-top: 8px;
-  font-size: 1.24rem;
 }
 
 .daily-sections,
@@ -481,8 +465,7 @@ a {
 }
 
 @media (max-width: 960px) {
-  .hero__content,
-  .stats-grid,
+  .hero-home,
   .daily-sections,
   .project-grid {
     grid-template-columns: 1fr;
@@ -496,7 +479,7 @@ a {
   }
 
   .topbar {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     gap: 12px;
     flex-direction: column;
     align-items: flex-start;
@@ -516,12 +499,13 @@ a {
     width: 100%;
   }
 
+  .hero-home__copy,
+  .hero-panel,
   .daily-feature,
   .daily-section-card,
   .project-card,
   .archive-card,
   .sprout-note,
-  .status-card,
   .archive-summary {
     padding: 18px;
   }

@@ -3,11 +3,10 @@ import { dailyEntries, todayEntry } from '../data/ai-daily'
 
 const recentEntries = dailyEntries.slice(0, 4)
 
-const basics = [
-  { label: '栏目状态', value: 'Building' },
-  { label: '生成时间', value: '08:00' },
-  { label: '提醒时间', value: '09:00' },
-  { label: '阅读模式', value: 'Mobile first' },
+const highlights = [
+  'Daily AI briefing',
+  'Mobile-first reading',
+  '09:00 bot reminder',
 ]
 </script>
 
@@ -17,7 +16,7 @@ const basics = [
     <div class="bg-orb bg-orb--2" />
     <div class="bg-grid" />
 
-    <header class="hero hero--compact">
+    <header class="hero hero--home">
       <nav class="topbar">
         <div class="brand">
           <span class="brand__dot">🌱</span>
@@ -26,60 +25,49 @@ const basics = [
         <div class="topbar__hint">ai daily × bot × web</div>
       </nav>
 
-      <section class="hero__content hero__content--single">
-        <div class="hero__copy">
+      <section class="hero-home">
+        <div class="hero-home__copy">
           <p class="eyebrow">AI DAILY HOME</p>
-          <h1>今天值得看的 AI 信息，会先在这里集合。</h1>
+          <h1>每天把 AI 世界里真正值得看的东西，整理成一页。</h1>
           <p class="hero__desc">
-            首页只保留最基本的信息和 Daily 汇总入口，真正的详细内容放到单日页面里看。
+            首页只保留简洁概览，真正的日报内容放进单独详情页里。
+            你早上打开时，先看到今天值不值得点开；想深看，再进入当天 Daily。
           </p>
+
+          <div class="hero__actions">
+            <RouterLink class="button button--primary" :to="`/daily/${todayEntry.slug}`">
+              打开今日详情
+            </RouterLink>
+            <RouterLink class="button button--ghost" to="/archive">
+              浏览历史
+            </RouterLink>
+          </div>
+
+          <div class="hero-highlights">
+            <span v-for="item in highlights" :key="item" class="hero-highlights__item">
+              {{ item }}
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel__badge">Today</div>
+          <p class="hero-panel__date">{{ todayEntry.date }}</p>
+          <h2>{{ todayEntry.title }}</h2>
+          <p>{{ todayEntry.summary }}</p>
+          <div class="hero-panel__divider" />
+          <strong>{{ todayEntry.featured.title }}</strong>
+          <span>{{ todayEntry.featured.summary }}</span>
         </div>
       </section>
     </header>
 
     <main>
-      <section class="section">
-        <div class="section__head section__head--tight">
-          <p class="eyebrow">OVERVIEW</p>
-          <h2>Basic info</h2>
-          <p>这是一个面向手机浏览的 AI Daily 主页，适合快速扫一眼，再点进当天详情。</p>
-        </div>
-
-        <div class="stats-grid">
-          <article v-for="item in basics" :key="item.label" class="status-card">
-            <span>{{ item.label }}</span>
-            <strong>{{ item.value }}</strong>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section__head section__head--tight">
-          <p class="eyebrow">TODAY</p>
-          <h2>{{ todayEntry.title }}</h2>
-          <p>{{ todayEntry.summary }}</p>
-        </div>
-
-        <article class="daily-feature">
-          <div class="daily-feature__meta">
-            <span class="pill">{{ todayEntry.date }}</span>
-            <span class="pill pill--soft">Today</span>
-          </div>
-          <h3>{{ todayEntry.featured.title }}</h3>
-          <p>{{ todayEntry.featured.summary }}</p>
-          <div class="card-actions">
-            <RouterLink class="button button--primary button--inline" :to="`/daily/${todayEntry.slug}`">
-              打开今日详情
-            </RouterLink>
-          </div>
-        </article>
-      </section>
-
-      <section class="section">
+      <section class="section section--tight">
         <div class="section__head section__head--tight">
           <p class="eyebrow">RECENT DAILY</p>
           <h2>Daily 汇总</h2>
-          <p>这里只看概览，需要展开的时候再点进去。</p>
+          <p>首页只看概览，需要展开的时候再点进去。</p>
         </div>
 
         <div class="archive-list">
