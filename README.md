@@ -9,15 +9,16 @@ GitHub Pages 主页仓库，当前作为 douya-labs 的公开展示站。
 
 ## Collaboration
 - 首页结构由主维护者负责
-- 绿豆芽（SWE）主要负责 `green/` 区域
-- 黄豆芽（PM）主要负责 `yellow/` 区域
+- 绿豆芽主要负责 `green/` 区域
+- 黄豆芽主要负责 `yellow/` 区域
+- 两者不再绑定固定职能标签，只按不同协作区工作
 - 所有新内容默认先走 PR，再合并到 `main`
 
 详细规则见：[`COLLAB_RULES.md`](./COLLAB_RULES.md)
 
 ## Suggested structure
-- `green/`：绿豆芽区域，偏功能、交互、技术 demo
-- `yellow/`：黄豆芽区域，偏文案、介绍、路线图、说明页
+- `green/`：绿豆芽区域
+- `yellow/`：黄豆芽区域
 - `src/`：当前站点前端源码
 - `.github/workflows/`：GitHub Pages 自动部署配置
 

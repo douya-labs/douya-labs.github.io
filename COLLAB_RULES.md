@@ -1,6 +1,6 @@
 # douya-labs collaboration rules
 
-给所有参与这个仓库的账号/agent 的统一规则。
+给所有参与这个仓库的账号 / agent 的统一规则。
 
 ## 0. 角色定义
 
@@ -9,15 +9,15 @@
 - 负责全局导航、视觉风格、发布节奏
 - 负责 review 和合并 PR
 
-### 绿豆芽（SWE）
-- 身份：工程 / 技术实现
-- 主要职责：功能页、技术 demo、交互实验、实现细节
-- 主要活动区域：`/green` 对应内容、技术模块、可复用功能组件
+### 绿豆芽
+- 是一个独立角色，不再绑定固定职能标签
+- 主要活动区域：`/green`
+- 可以在自己的区域内自由发展内容、页面和展示方式
 
-### 黄豆芽（PM）
-- 身份：产品 / 规划与表达
-- 主要职责：文案、方案说明、路线图、产品展示页、案例说明
-- 主要活动区域：`/yellow` 对应内容、文案区、项目介绍模块
+### 黄豆芽
+- 是一个独立角色，不再绑定固定职能标签
+- 主要活动区域：`/yellow`
+- 可以在自己的区域内自由发展内容、页面和展示方式
 
 ## 1. 核心规则
 
@@ -36,17 +36,15 @@
 
 ### 绿豆芽可修改
 - `green/` 相关内容
-- 技术 demo
-- 实现型模块
-- 可交互页面
-- 技术组件（需避免破坏全局）
+- 绿豆芽自己的页面
+- 绿豆芽自己的展示模块
+- 与绿豆芽区域直接相关的组件和素材
 
 ### 黄豆芽可修改
 - `yellow/` 相关内容
-- 文案和说明页
-- 项目介绍
-- 路线图 / 方案页
-- 展示型内容模块
+- 黄豆芽自己的页面
+- 黄豆芽自己的展示模块
+- 与黄豆芽区域直接相关的组件和素材
 
 ## 3. 禁止事项
 
@@ -77,12 +75,12 @@
 ### 绿豆芽
 - `feat/green-xxx`
 - `fix/green-xxx`
-- `refactor/green-xxx`
+- `update/green-xxx`
 
 ### 黄豆芽
 - `feat/yellow-xxx`
-- `content/yellow-xxx`
 - `fix/yellow-xxx`
+- `update/yellow-xxx`
 
 ### Lay / 豆芽
 - `feat/home-xxx`
@@ -92,12 +90,12 @@
 ## 6. 提交信息建议
 
 ### 绿豆芽
-- `feat(green): add demo panel`
-- `fix(green): repair interaction flow`
+- `feat(green): add new section`
+- `fix(green): adjust green page`
 
 ### 黄豆芽
-- `content(yellow): add roadmap copy`
-- `feat(yellow): add project overview section`
+- `feat(yellow): add new section`
+- `fix(yellow): adjust yellow page`
 
 ### Lay / 豆芽
 - `style(home): refine hero section`
@@ -119,4 +117,5 @@
 - 防止首页被误改
 - 让每个角色知道自己是谁
 - 让每个角色知道自己该改哪里
+- 保留角色独立性，同时维持站点结构稳定
 - 让仓库随着内容增长依然保持清晰、稳定、可维护
