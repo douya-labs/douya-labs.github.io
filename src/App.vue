@@ -26,6 +26,35 @@ const signals = [
 ]
 
 const archivePreview = archiveEntries.slice(1)
+
+const dailyStats = [
+  { label: 'Build window', value: '08:00' },
+  { label: 'Bot reminder', value: '09:00' },
+  { label: 'Reading mode', value: 'Mobile first' },
+]
+
+const sections = [
+  {
+    eyebrow: 'GITHUB',
+    title: 'GitHub updates',
+    items: todayEntry.githubUpdates,
+  },
+  {
+    eyebrow: 'PRODUCT',
+    title: 'Product updates',
+    items: todayEntry.productUpdates,
+  },
+  {
+    eyebrow: 'EVENTS',
+    title: 'Major events',
+    items: todayEntry.majorEvents,
+  },
+  {
+    eyebrow: 'RESEARCH',
+    title: 'Research picks',
+    items: todayEntry.researchPicks,
+  },
+]
 </script>
 
 <template>
@@ -105,74 +134,38 @@ const archivePreview = archiveEntries.slice(1)
           </article>
 
           <aside class="daily-status">
-            <div class="status-card">
-              <span>Build window</span>
-              <strong>08:00</strong>
-            </div>
-            <div class="status-card">
-              <span>Bot reminder</span>
-              <strong>09:00</strong>
-            </div>
-            <div class="status-card">
-              <span>Reading mode</span>
-              <strong>Mobile first</strong>
+            <div v-for="stat in dailyStats" :key="stat.label" class="status-card">
+              <span>{{ stat.label }}</span>
+              <strong>{{ stat.value }}</strong>
             </div>
           </aside>
         </div>
 
-        <div class="daily-grid">
-          <section class="daily-card">
-            <div class="daily-card__head">
-              <p class="eyebrow">GITHUB</p>
-              <h3>GitHub updates</h3>
-            </div>
-            <ul class="daily-list">
-              <li v-for="item in todayEntry.githubUpdates" :key="item.title">
-                <strong>{{ item.title }}</strong>
-                <p>{{ item.summary }}</p>
-              </li>
-            </ul>
-          </section>
+        <div class="quick-nav">
+          <a v-for="section in sections" :key="section.title" class="quick-nav__pill" :href="`#${section.eyebrow.toLowerCase()}`">
+            {{ section.title }}
+          </a>
+        </div>
 
-          <section class="daily-card">
+        <div class="daily-sections">
+          <section
+            v-for="section in sections"
+            :id="section.eyebrow.toLowerCase()"
+            :key="section.title"
+            class="daily-section-card"
+          >
             <div class="daily-card__head">
-              <p class="eyebrow">PRODUCT</p>
-              <h3>Product updates</h3>
+              <p class="eyebrow">{{ section.eyebrow }}</p>
+              <h3>{{ section.title }}</h3>
             </div>
             <ul class="daily-list">
-              <li v-for="item in todayEntry.productUpdates" :key="item.title">
-                <strong>{{ item.title }}</strong>
-                <p>{{ item.summary }}</p>
-              </li>
-            </ul>
-          </section>
-
-          <section class="daily-card">
-            <div class="daily-card__head">
-              <p class="eyebrow">EVENTS</p>
-              <h3>Major events</h3>
-            </div>
-            <ul class="daily-list">
-              <li v-for="item in todayEntry.majorEvents" :key="item.title">
+              <li v-for="item in section.items" :key="item.title">
                 <strong>{{ item.title }}</strong>
                 <p>{{ item.summary }}</p>
               </li>
             </ul>
           </section>
         </div>
-
-        <section class="daily-card daily-card--wide research-card">
-          <div class="daily-card__head">
-            <p class="eyebrow">RESEARCH</p>
-            <h3>Research picks</h3>
-          </div>
-          <ul class="daily-list">
-            <li v-for="item in todayEntry.researchPicks" :key="item.title">
-              <strong>{{ item.title }}</strong>
-              <p>{{ item.summary }}</p>
-            </li>
-          </ul>
-        </section>
 
         <article class="sprout-note">
           <p class="eyebrow">SPROUT NOTE</p>
@@ -205,15 +198,25 @@ const archivePreview = archiveEntries.slice(1)
           <p>后续每天的数据会按日期沉淀下来，方便手机端快速回看。</p>
         </div>
 
-        <div class="archive-list">
-          <article v-for="entry in archivePreview" :key="entry.slug" class="archive-card">
-            <div class="archive-card__meta">
-              <span class="pill pill--soft">{{ entry.date }}</span>
-              <span>{{ entry.title }}</span>
-            </div>
-            <p>{{ entry.summary }}</p>
-            <small>{{ entry.sproutNote }}</small>
-          </article>
+        <div class="archive-shell">
+          <div class="archive-list">
+            <article v-for="entry in archivePreview" :key="entry.slug" class="archive-card">
+              <div class="archive-card__meta">
+                <span class="pill pill--soft">{{ entry.date }}</span>
+                <span>{{ entry.title }}</span>
+              </div>
+              <p>{{ entry.summary }}</p>
+              <small>{{ entry.sproutNote }}</small>
+            </article>
+          </div>
+
+          <aside class="archive-summary">
+            <p class="eyebrow">ARCHIVE MODE</p>
+            <h3>Designed for quick daily review</h3>
+            <p>
+              首页看当天重点，历史区看过去几天的节奏变化。后面还可以继续长出近 7 天、近 30 天的趋势视图。
+            </p>
+          </aside>
         </div>
       </section>
     </main>

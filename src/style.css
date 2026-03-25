@@ -133,7 +133,8 @@ a {
 .section h2,
 .project-card h3,
 .daily-feature h3,
-.daily-card h3 {
+.daily-section-card h3,
+.archive-summary h3 {
   margin: 0;
 }
 
@@ -146,11 +147,12 @@ a {
 .hero__desc,
 .section__head p,
 .project-card p,
-.daily-card p,
+.daily-section-card p,
 .daily-feature p,
 .archive-card p,
 .sprout-note p,
-.archive-card small {
+.archive-card small,
+.archive-summary p {
   color: #99a9c2;
 }
 
@@ -196,11 +198,12 @@ a {
 
 .hero-card,
 .project-card,
-.daily-card,
+.daily-section-card,
 .daily-feature,
 .archive-card,
 .sprout-note,
-.status-card {
+.status-card,
+.archive-summary {
   position: relative;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -373,22 +376,38 @@ a {
   font-size: 1.24rem;
 }
 
-.daily-grid,
+.quick-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.quick-nav__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #dce8fb;
+  font-size: 0.9rem;
+}
+
+.daily-sections,
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
-.daily-card,
+.daily-section-card,
 .project-card,
 .archive-card,
-.sprout-note {
+.sprout-note,
+.archive-summary {
   padding: 20px;
-}
-
-.daily-card--wide {
-  margin-top: 16px;
 }
 
 .daily-card__head {
@@ -413,7 +432,8 @@ a {
 .project-card p,
 .archive-card p,
 .sprout-note p,
-.archive-card small {
+.archive-card small,
+.archive-summary p {
   margin: 0;
 }
 
@@ -437,6 +457,12 @@ a {
   margin-top: 18px;
 }
 
+.archive-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 16px;
+}
+
 .archive-list {
   display: grid;
   gap: 14px;
@@ -448,11 +474,17 @@ a {
   font-size: 0.92rem;
 }
 
+.archive-summary h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
 @media (max-width: 960px) {
   .hero__content,
   .daily-overview,
-  .daily-grid,
-  .project-grid {
+  .daily-sections,
+  .project-grid,
+  .archive-shell {
     grid-template-columns: 1fr;
   }
 }
@@ -482,12 +514,24 @@ a {
     width: 100%;
   }
 
+  .quick-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .quick-nav::-webkit-scrollbar {
+    display: none;
+  }
+
   .daily-feature,
-  .daily-card,
+  .daily-section-card,
   .project-card,
   .archive-card,
   .sprout-note,
-  .status-card {
+  .status-card,
+  .archive-summary {
     padding: 18px;
   }
 }
