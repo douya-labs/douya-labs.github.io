@@ -24,6 +24,8 @@ const signals = [
   '09:00 bot reminder with link',
   'Mobile-first AI browsing experience',
 ]
+
+const archivePreview = archiveEntries.slice(1)
 </script>
 
 <template>
@@ -53,14 +55,7 @@ const signals = [
 
           <div class="hero__actions">
             <a class="button button--primary" href="#daily">View today</a>
-            <a
-              class="button button--ghost"
-              href="https://github.com/douya-labs/douya-labs.github.io"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
+            <a class="button button--ghost" href="#archive">Browse history</a>
           </div>
         </div>
 
@@ -98,15 +93,32 @@ const signals = [
           <p>{{ todayEntry.summary }}</p>
         </div>
 
-        <article class="daily-feature">
-          <div class="daily-feature__meta">
-            <span class="pill">{{ todayEntry.date }}</span>
-            <span class="pill pill--soft">Featured</span>
-          </div>
-          <h3>{{ todayEntry.featured.title }}</h3>
-          <p>{{ todayEntry.featured.summary }}</p>
-          <span class="source">Source · {{ todayEntry.featured.source }}</span>
-        </article>
+        <div class="daily-overview">
+          <article class="daily-feature">
+            <div class="daily-feature__meta">
+              <span class="pill">{{ todayEntry.date }}</span>
+              <span class="pill pill--soft">Featured</span>
+            </div>
+            <h3>{{ todayEntry.featured.title }}</h3>
+            <p>{{ todayEntry.featured.summary }}</p>
+            <span class="source">Source · {{ todayEntry.featured.source }}</span>
+          </article>
+
+          <aside class="daily-status">
+            <div class="status-card">
+              <span>Build window</span>
+              <strong>08:00</strong>
+            </div>
+            <div class="status-card">
+              <span>Bot reminder</span>
+              <strong>09:00</strong>
+            </div>
+            <div class="status-card">
+              <span>Reading mode</span>
+              <strong>Mobile first</strong>
+            </div>
+          </aside>
+        </div>
 
         <div class="daily-grid">
           <section class="daily-card">
@@ -149,6 +161,19 @@ const signals = [
           </section>
         </div>
 
+        <section class="daily-card daily-card--wide research-card">
+          <div class="daily-card__head">
+            <p class="eyebrow">RESEARCH</p>
+            <h3>Research picks</h3>
+          </div>
+          <ul class="daily-list">
+            <li v-for="item in todayEntry.researchPicks" :key="item.title">
+              <strong>{{ item.title }}</strong>
+              <p>{{ item.summary }}</p>
+            </li>
+          </ul>
+        </section>
+
         <article class="sprout-note">
           <p class="eyebrow">SPROUT NOTE</p>
           <p>{{ todayEntry.sproutNote }}</p>
@@ -173,7 +198,7 @@ const signals = [
         </div>
       </section>
 
-      <section class="section section--archive">
+      <section id="archive" class="section section--archive">
         <div class="section__head section__head--tight">
           <p class="eyebrow">HISTORY</p>
           <h2>Daily archive preview</h2>
@@ -181,12 +206,13 @@ const signals = [
         </div>
 
         <div class="archive-list">
-          <article v-for="entry in archiveEntries" :key="entry.slug" class="archive-card">
+          <article v-for="entry in archivePreview" :key="entry.slug" class="archive-card">
             <div class="archive-card__meta">
-              <span>{{ entry.date }}</span>
+              <span class="pill pill--soft">{{ entry.date }}</span>
               <span>{{ entry.title }}</span>
             </div>
             <p>{{ entry.summary }}</p>
+            <small>{{ entry.sproutNote }}</small>
           </article>
         </div>
       </section>

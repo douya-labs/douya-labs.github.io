@@ -149,7 +149,8 @@ a {
 .daily-card p,
 .daily-feature p,
 .archive-card p,
-.sprout-note p {
+.sprout-note p,
+.archive-card small {
   color: #99a9c2;
 }
 
@@ -198,7 +199,8 @@ a {
 .daily-card,
 .daily-feature,
 .archive-card,
-.sprout-note {
+.sprout-note,
+.status-card {
   position: relative;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -319,9 +321,15 @@ a {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+.daily-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.6fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
 .daily-feature {
   padding: 22px;
-  margin-bottom: 18px;
 }
 
 .daily-feature__meta,
@@ -344,6 +352,27 @@ a {
   font-size: 0.92rem;
 }
 
+.daily-status {
+  display: grid;
+  gap: 12px;
+}
+
+.status-card {
+  padding: 18px;
+}
+
+.status-card span {
+  display: block;
+  color: #88a1c2;
+  font-size: 0.9rem;
+}
+
+.status-card strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.24rem;
+}
+
 .daily-grid,
 .project-grid {
   display: grid;
@@ -356,6 +385,10 @@ a {
 .archive-card,
 .sprout-note {
   padding: 20px;
+}
+
+.daily-card--wide {
+  margin-top: 16px;
 }
 
 .daily-card__head {
@@ -379,7 +412,8 @@ a {
 .daily-list li p,
 .project-card p,
 .archive-card p,
-.sprout-note p {
+.sprout-note p,
+.archive-card small {
   margin: 0;
 }
 
@@ -408,8 +442,15 @@ a {
   gap: 14px;
 }
 
+.archive-card small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.92rem;
+}
+
 @media (max-width: 960px) {
   .hero__content,
+  .daily-overview,
   .daily-grid,
   .project-grid {
     grid-template-columns: 1fr;
@@ -445,7 +486,8 @@ a {
   .daily-card,
   .project-card,
   .archive-card,
-  .sprout-note {
+  .sprout-note,
+  .status-card {
     padding: 18px;
   }
 }
