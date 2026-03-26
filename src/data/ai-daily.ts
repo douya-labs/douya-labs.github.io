@@ -1,3 +1,4 @@
+import daily20260326 from './daily/2026-03-26.json'
 import daily20260325 from './daily/2026-03-25.json'
 import daily20260324 from './daily/2026-03-24.json'
 import daily20260323 from './daily/2026-03-23.json'
@@ -26,6 +27,7 @@ export type AiDailyEntry = {
 }
 
 export const dailyEntries = [
+  daily20260326,
   daily20260325,
   daily20260324,
   daily20260323,
