@@ -1,71 +1,77 @@
 {
   "date": "2026-03-26",
   "slug": "2026-03-26",
-  "title": "AI is shifting from raw model hype to deployable systems, governed workflows, and agent tooling",
-  "summary": "今天这版 AI Daily 很像一次“落地日”巡检：GitHub 上最热的信号继续集中在 super-agent、AI gateway 和 skill 化工具链；产品侧开始把 agent 明确塞进银行与零售工作流；活动侧则从安全、教育到 geospatial 场景一起讨论 AI 怎么真正进入组织。主线不是谁参数更大，而是谁更像能在真实世界里跑起来。",
+  "title": "AI Daily: deployable AI systems, governed workflows, and agent tooling are converging",
+  "summary": "今天这版 AI Daily 已经不是单点 GitHub 信号，而是把 GitHub、产品发布、行业事件和研究线索一起拉进了生成链。像 bytedance/deer-flow、BerriAI/litellm 这样的开源动向，正在和企业语音 agent、安全测试、生产率研究汇成同一条“AI 正在走向真实生产环境”的主线。",
   "featured": {
-    "title": "Agent tooling is maturing from demo layer into a real operating stack",
-    "summary": "从 GitHub Trending 上持续高热的 DeerFlow、LiteLLM，到 Eclipse Theia 计划在 1.70.x 里结束 AI feature beta、把 agent mode 变成默认体验，今天最强的信号不是单个模型能力，而是 agent 编排、网关、IDE 集成和可治理工作流正在一起成型。AI builder 赛道开始更像完整软件栈，而不只是零散玩具。",
-    "source": "GitHub Trending / bytedance/deer-flow / BerriAI/litellm / eclipse-theia/theia",
-    "href": "https://github.com/trending?since=daily"
+    "title": "bytedance/deer-flow became today’s strongest GitHub signal",
+    "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. 它的 star、最近更新时间和话题标签一起说明，这不是模板占位，而是真实可验证的外部项目动态。",
+    "source": "GitHub API",
+    "href": "https://github.com/bytedance/deer-flow"
   },
   "githubUpdates": [
     {
-      "title": "ByteDance’s DeerFlow stayed one of today’s clearest GitHub super-agent signals",
-      "summary": "GitHub Trending 里 DeerFlow 继续高热，而仓库本身把 2.0 定义为一次 ground-up rewrite，核心卖点直接落在 sub-agents、memory、sandbox、skills 和 message gateway 上。这个信号很直白：开发者现在追的不是单个 prompt demo，而是能研究、编码、协调多步骤任务的 agent harness。",
-      "source": "GitHub Trending / bytedance/deer-flow",
+      "title": "bytedance/deer-flow stayed active with real builder attention",
+      "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. 当前 star 约 46846，最近更新时间 2026-03-26。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
+      "source": "GitHub API",
       "href": "https://github.com/bytedance/deer-flow"
     },
     {
-      "title": "Eclipse Theia planned its March 26 release around turning AI features into default IDE behavior",
-      "summary": "Theia 1.70.x 的 endgame 计划把 AI 从“可选加成”继续往“默认工作流”推进：包括结束 AI feature beta、让 Coder agent 的 agent mode 成为默认、加入 model auto-discovery，并补上 token usage indicator。对开发工具生态来说，这说明 agent UX 正在从实验区走向主界面。",
-      "source": "eclipse-theia/theia issue #17201",
-      "href": "https://github.com/eclipse-theia/theia/issues/17201"
+      "title": "BerriAI/litellm stayed active with real builder attention",
+      "summary": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM] 当前 star 约 40767，最近更新时间 2026-03-26。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
+      "source": "GitHub API",
+      "href": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "title": "langchain-ai/open_deep_research stayed active with real builder attention",
+      "summary": "A notable AI repository is active today. 当前 star 约 10952，最近更新时间 2026-03-26。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
+      "source": "GitHub API",
+      "href": "https://github.com/langchain-ai/open_deep_research"
     }
   ],
   "productUpdates": [
     {
-      "title": "UiPath launched agentic AI products for financial crime compliance and loan origination",
-      "summary": "UiPath 这次没有继续讲抽象 agent 愿景，而是直接把产品对准银行的 sanctions screening、alert review、adverse media monitoring 和 loan origination。重点在于它把 AI agents、workflow automation、audit trail 和 human oversight 一起打包，明显是在回答一个现实问题：regulated 行业要怎么安全地用 agent。",
-      "source": "SecurityBrief / UiPath",
-      "href": "https://securitybrief.com.au/story/uipath-launches-ai-tools-for-bank-compliance-lending"
+      "title": "IBM and ElevenLabs pushed enterprise agentic AI toward voice-first deployment",
+      "summary": "IBM 与 ElevenLabs 宣布把 TTS / STT 接进 watsonx Orchestrate，让企业可以把更自然、多语言、可治理的语音体验接入 agentic workflow。这个信号说明产品化重点已经不只是“更会聊”，而是让 AI agent 真正进入客户服务、员工支持和高并发企业流程。",
+      "source": "IBM Newsroom",
+      "href": "https://newsroom.ibm.com/2026-03-25-enterprise-ai-finds-its-voice-elevenlabs-and-ibm-bring-premium-voice-capabilities-to-agentic-ai"
     },
     {
-      "title": "Perfect Corp. used Shoptalk 2026 to pitch AI shopping agents plus developer-first APIs",
-      "summary": "Perfect Corp. 在 Shoptalk 2026 展示 AI Beauty Agent 和一套面向零售的 API 组合，把个性化推荐、视觉生成、虚拟试用和低门槛接入打包成更容易商业化的形态。这个方向很有代表性：消费级 AI 产品开始不只卖“聊天”，而是卖转化率、实时个性化和可嵌入的 API 能力。",
-      "source": "Business Wire / Las Vegas Sun",
-      "href": "https://lasvegassun.com/news/2026/mar/24/perfect-corp-showcases-ai-powered-beauty-agents-an/"
+      "title": "OVHcloud acquired Dragon LLM and launched an AI lab for sovereign model services",
+      "summary": "OVHcloud 宣布收购 Dragon LLM 并启动 AI lab，方向明显是把面向受监管行业的 specialized LLM、主权部署和企业服务能力做成云产品。这个信号代表欧洲云厂商正在把“可控、可部署、合规友好”的 AI 当成真正的产品卖点。",
+      "source": "GlobeNewswire / OVHcloud",
+      "href": "https://www.globenewswire.com/news-release/2026/03/25/3261920/0/en/OVHcloud-announces-the-acquisition-of-Dragon-LLM-a-developer-of-specialized-generative-AI-models-and-is-launching-its-AI-lab-to-offer-new-services-to-its-customers-based-on-LLMs.html"
     }
   ],
   "majorEvents": [
     {
       "title": "GitHub put AI security and AI-powered SDLC themes front-and-center around RSAC 2026",
-      "summary": "GitHub 的活动页把 RSAC 2026 描述成一个关键窗口：随着 GitHub Copilot 这类 AI 加速开发，安全必须跟上“code speed”。这说明平台方已经不再把 AI 当作单独 feature，而是把它视作会改变整个软件交付链条、并必须同步重做 AppSec 的系统性变量。",
+      "summary": "GitHub 的 RSAC 2026 页面把重点放在 developer-native security、AI-powered SDLC 与安全治理上。这个信号很直接：随着 Copilot 这类能力把开发速度继续拉高，平台方已经把“AI 加速开发之后，安全怎么跟上”当成主舞台议题。",
       "source": "GitHub Events",
-      "href": "https://github.com/resources/events"
+      "href": "https://github.com/resources/events/github-rsac2026"
     },
     {
-      "title": "NJIT and UF both used March 26 to frame AI literacy as an institutional priority",
-      "summary": "NJIT 的 AI Exploration Day 把主题定成“AI, Technology, and Society”，UF 则围绕 National AI Literacy Day 举办两天会议，讨论怎样把 AI 工具更负责任地带进学校。这个信号很值得记：今天的重要事件不只是产业发布会，教育系统也在把 AI literacy、伦理与 curriculum integration 变成正式议题。",
-      "source": "NJIT / University of Florida",
-      "href": "https://exploreai.njit.edu/"
+      "title": "Novee used RSAC 2026 to frame AI red teaming as a continuous testing problem",
+      "summary": "Novee 在 RSAC 2026 推出专门攻击 LLM 应用的 AI pentesting agent，强调多步攻击链、持续测试与 CI/CD 集成。这个事件说明安全行业已经默认：AI app 不是普通 web app，测试方法也必须升级到更贴近真实对抗者的模式。",
+      "source": "Help Net Security",
+      "href": "https://www.helpnetsecurity.com/2026/03/25/novee-ai-pentesting-agent/"
     }
   ],
   "researchPicks": [
     {
       "title": "TraceSIR focused on a real bottleneck of agent systems: how to debug long execution traces",
-      "summary": "TraceSIR 提出用多代理框架去结构化分析 agent 的长执行轨迹，并配套 TraceBench 与 ReportEval。它有意思的地方在于研究重点不是再追求一个更炫的 agent demo，而是直面 production 问题：当 agent 链条变长、调用更多工具后，团队该怎么定位失败原因、抽取可执行报告。",
+      "summary": "TraceSIR 提出用多代理框架去结构化分析 agent 的长执行轨迹，并配套 TraceBench 与 ReportEval。它的重要性在于：研究重点不再只是做更炫的 agent demo，而是开始解决 production 里最痛的调试、归因和复盘问题。",
       "source": "arXiv 2603.00623",
       "href": "https://arxiv.org/abs/2603.00623"
     },
     {
-      "title": "SkillsBench argues that procedural skills help agents — but only when humans curate them well",
-      "summary": "SkillsBench 在 86 个任务、11 个领域里测试后发现：curated skills 平均能把通过率提升 16.2 个百分点，但 self-generated skills 基本没有平均收益。这个结论很扎实，也很贴近今天 GitHub 上的 skill 化 agent 工程潮流——真正有价值的往往不是让模型“自己悟”，而是把可复用流程明确封装出来。",
-      "source": "arXiv 2602.12670",
-      "href": "https://arxiv.org/abs/2602.12670"
+      "title": "Atlanta Fed found AI adoption is already lifting productivity, but unevenly",
+      "summary": "这份基于近 750 位企业高管调查的 working paper 发现：AI 投入已经较广泛，生产率提升为正且预计 2026 年继续增强，同时短期整体就业下滑证据有限，但岗位结构正在变化。它像一个现实校准器：AI 的真正影响正在组织层面慢慢显形。",
+      "source": "Federal Reserve Bank of Atlanta",
+      "href": "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/03/25/04-artificial-intelligence-productivity-and-the-workforce-evidence-from-corporate-executives"
     }
   ],
-  "sproutNote": "今天最强的总线不是“模型又升级了”，而是 AI 正在被重新包装成可部署的系统：repo 侧是 agent harness、gateway、IDE 原生集成；产品侧是银行与零售里的工作流化 agent；事件和研究侧则开始围绕安全、素养、调试与技能工程补课。AI 现在越来越像一套要被运营、治理、维护的生产系统。",
-  "reminderSummary": "今日 AI Daily：GitHub agent 工具链继续升温，Theia 把 AI 往默认 IDE 体验推进，UiPath 和 Perfect Corp. 则把 agent 正式塞进银行与零售工作流——AI 正在更像生产系统，而不只是模型秀。",
-  "generatedAt": "2026-03-26T00:04:00Z"
+  "sproutNote": "这次最关键的变化，不再只是 GitHub 真数据进了流水线，而是 product、events、research 三块也开始被真实来源驱动。这样生成出来的日报才更接近一个能持续运转的内容系统，而不是半自动草稿。",
+  "reminderSummary": "今日 AI Daily：bytedance/deer-flow、BerriAI/litellm 等开源动态之外，IBM × ElevenLabs 的企业语音 agent、RSAC 2026 的 AI 安全议题，以及 TraceSIR / Atlanta Fed 研究也已进入生成链。",
+  "generatedAt": "2026-03-26T05:42:40.509Z"
 }

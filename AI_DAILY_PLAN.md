@@ -2,7 +2,7 @@
 
 ## Confirmed schedule
 - 08:00 Asia/Shanghai: start collecting + generating AI Daily
-- 09:00 Asia/Shanghai: send QQ bot reminder with link + one-line summary
+- 09:00 Asia/Shanghai: send Feishu reminder with link + one-line summary
 
 ## Goals
 - Daily AI homepage update
@@ -23,7 +23,7 @@
 - Homepage summary update
 - Daily page update
 - Historical archive entry
-- 09:00 QQ reminder with URL + one-sentence summary
+- 09:00 Feishu reminder with URL + one-sentence summary
 
 ## UX direction
 - Mobile first
