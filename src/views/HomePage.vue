@@ -9,6 +9,7 @@ const highlights = [
   'Daily AI briefing',
   'Mobile-first reading',
   '09:00 bot reminder',
+  'Latest LLM papers',
 ]
 </script>
 
@@ -78,6 +79,9 @@ const highlights = [
             <div class="hero__actions">
               <RouterLink class="button button--primary" :to="`/daily/${todayEntry.slug}`">
                 打开今日详情
+              </RouterLink>
+              <RouterLink class="button button--ghost" to="/papers/latest">
+                最新大模型论文
               </RouterLink>
               <RouterLink class="button button--ghost" to="/archive">
                 浏览历史

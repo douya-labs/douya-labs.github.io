@@ -404,7 +404,8 @@ a {
 }
 
 .daily-sections,
-.project-grid {
+.project-grid,
+.paper-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
@@ -418,7 +419,8 @@ a {
 .project-card,
 .archive-card,
 .sprout-note,
-.archive-summary {
+.archive-summary,
+.paper-card {
   padding: 20px;
 }
 
@@ -478,6 +480,65 @@ a {
   display: block;
   margin-top: 10px;
   font-size: 0.92rem;
+}
+
+.papers-page {
+  padding-bottom: 24px;
+}
+
+.papers-highlights {
+  margin-top: 14px;
+}
+
+.papers-summary-card {
+  margin-bottom: 12px;
+}
+
+.papers-category {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.paper-card {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(11, 16, 34, 0.62);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+
+.paper-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.14rem;
+  line-height: 1.3;
+}
+
+.paper-card p {
+  margin: 0;
+  color: #99a9c2;
+}
+
+.paper-card__why {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.paper-card__why strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.paper-card__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 @media (max-width: 960px) {
