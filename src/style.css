@@ -555,119 +555,385 @@ a {
     linear-gradient(180deg, color-mix(in srgb, var(--palette-bg) 88%, white) 0%, color-mix(in srgb, var(--palette-bg) 72%, transparent) 100%);
 }
 
-.palette-avatar-wrap {
+.palette-card__surface--avatar {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--palette-bg) 92%, white) 0%, color-mix(in srgb, var(--palette-bg) 84%, white) 100%);
+}
+
+.reference-avatar-stage {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 230px;
+  min-height: 320px;
   margin-bottom: 20px;
-}
-
-.palette-avatar-shadow {
-  position: absolute;
-  width: 186px;
-  height: 44px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--palette-main) 20%, #10182f);
-  filter: blur(24px);
-  transform: translateY(86px);
-  opacity: 0.42;
-}
-
-.palette-avatar {
-  position: relative;
-  width: 164px;
-  height: 164px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
+  border-radius: 24px;
   background:
-    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.72) 38%, color-mix(in srgb, var(--palette-main) 12%, white) 72%, color-mix(in srgb, var(--palette-main) 28%, white) 100%);
-  border: 12px solid color-mix(in srgb, var(--palette-main) 82%, white 18%);
-  box-shadow:
-    0 20px 50px rgba(15, 22, 40, 0.2),
-    0 0 0 12px color-mix(in srgb, var(--palette-main) 14%, transparent);
+    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.22), transparent 22%),
+    linear-gradient(180deg, color-mix(in srgb, var(--palette-bg) 90%, white) 0%, var(--palette-bg) 100%);
 }
 
-.palette-avatar__halo {
+.reference-avatar-shadow {
   position: absolute;
-  inset: -20px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--palette-main) 32%, white);
-  opacity: 0.85;
+  bottom: 36px;
+  width: 250px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(76, 48, 28, 0.16);
+  filter: blur(12px);
 }
 
-.palette-avatar__face {
+.reference-avatar {
   position: relative;
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.38);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-
-.palette-avatar__eyes {
+  width: 320px;
+  height: 230px;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  gap: 22px;
-  padding-top: 32px;
 }
 
-.palette-avatar__eyes span {
+.reference-avatar-headset {
+  position: absolute;
+  top: 126px;
+  width: 68px;
+  height: 118px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--palette-main) 62%, white 38%), var(--palette-main));
+  border: 4px solid color-mix(in srgb, var(--palette-main) 84%, #ffffff 16%);
+  box-shadow:
+    inset 0 0 0 3px color-mix(in srgb, var(--palette-main) 28%, white),
+    0 14px 24px rgba(65, 44, 27, 0.14);
+}
+
+.reference-avatar-headset::before {
+  content: '';
+  position: absolute;
+  inset: 10px 12px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08));
+}
+
+.reference-avatar-headset::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  width: 16px;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  filter: blur(1px);
+}
+
+.reference-avatar-headset--left {
+  left: 44px;
+}
+
+.reference-avatar-headset--right {
+  right: 44px;
+}
+
+.reference-avatar__shell {
+  position: relative;
+  width: 240px;
+  height: 186px;
+  border-radius: 48% 48% 22% 22% / 44% 44% 30% 30%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 242, 240, 0.95) 60%, rgba(219, 202, 208, 0.92) 100%);
+  border: 4px solid rgba(204, 181, 180, 0.9);
+  box-shadow:
+    inset 0 -12px 22px rgba(188, 168, 177, 0.42),
+    0 16px 28px rgba(120, 90, 76, 0.12);
+}
+
+.reference-avatar__shell::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 18px;
+  bottom: 10px;
+  border-radius: 46% 46% 22% 22% / 42% 42% 28% 28%;
+  border: 3px solid rgba(215, 199, 203, 0.92);
+}
+
+.reference-avatar__panel {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  top: 36px;
+  bottom: 26px;
+  border-radius: 40px;
+  background: linear-gradient(180deg, rgba(255, 253, 250, 0.94), rgba(247, 236, 224, 0.9));
+  box-shadow: inset 0 -8px 16px rgba(225, 203, 188, 0.26);
+}
+
+.reference-avatar__gloss {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  filter: blur(1px);
+}
+
+.reference-avatar__gloss--1 {
+  width: 48px;
+  height: 24px;
+  top: 30px;
+  right: 52px;
+  transform: rotate(16deg);
+}
+
+.reference-avatar__gloss--2 {
+  width: 28px;
+  height: 18px;
+  top: 38px;
+  right: 24px;
+  transform: rotate(22deg);
+}
+
+.reference-avatar__eyes {
+  position: absolute;
+  top: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 72px;
+}
+
+.reference-avatar__eye {
+  position: relative;
+  width: 36px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 32%, #5d5059 0%, #2e252b 58%, #1d181c 100%);
+  box-shadow: inset 0 -8px 10px rgba(255, 255, 255, 0.04);
+}
+
+.reference-avatar__eye::before {
+  content: '';
+  position: absolute;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--palette-main) 52%, #24314d);
+  background: white;
+  top: 8px;
+  left: 7px;
 }
 
-.palette-avatar__smile {
-  width: 28px;
-  height: 14px;
-  margin: 18px auto 0;
-  border-bottom: 4px solid color-mix(in srgb, var(--palette-main) 62%, #24314d);
+.reference-avatar__eye::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  bottom: 9px;
+  left: 9px;
+}
+
+.reference-avatar__blush {
+  position: absolute;
+  top: 104px;
+  width: 34px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 175, 152, 0.55);
+  filter: blur(6px);
+}
+
+.reference-avatar__blush--left {
+  left: 22px;
+}
+
+.reference-avatar__blush--right {
+  right: 22px;
+}
+
+.reference-avatar__smile {
+  position: absolute;
+  left: 50%;
+  bottom: 38px;
+  width: 34px;
+  height: 16px;
+  transform: translateX(-50%);
+  border-bottom: 4px solid #7e5451;
   border-radius: 0 0 999px 999px;
 }
 
-.palette-avatar__sprout {
+.reference-avatar__sprout {
   position: absolute;
-  top: -24px;
   left: 50%;
-  width: 54px;
-  height: 54px;
+  top: -18px;
+  width: 120px;
+  height: 86px;
   transform: translateX(-50%);
 }
 
-.palette-avatar__leaf {
+.reference-avatar__stem {
   position: absolute;
-  width: 22px;
+  left: 50%;
+  bottom: 10px;
+  width: 14px;
+  height: 48px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--palette-main) 38%, #b9f06e), var(--palette-main));
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--palette-main) 24%, transparent);
+}
+
+.reference-avatar__leaf {
+  position: absolute;
+  top: 0;
+  width: 54px;
   height: 34px;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--palette-accent) 80%, white 20%), var(--palette-main));
-  border-radius: 90% 0 90% 0;
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--palette-main) 26%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--palette-accent) 82%, white 18%), var(--palette-main));
+  border-radius: 100% 16% 100% 16%;
+  box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.08), 0 10px 16px color-mix(in srgb, var(--palette-main) 26%, transparent);
 }
 
-.palette-avatar__leaf--left {
-  left: 5px;
-  top: 8px;
-  transform: rotate(-28deg);
-}
-
-.palette-avatar__leaf--right {
-  right: 5px;
-  top: 8px;
-  transform: scaleX(-1) rotate(-28deg);
-}
-
-.palette-avatar__status {
+.reference-avatar__leaf::after {
+  content: '';
   position: absolute;
-  right: calc(50% - 74px);
-  bottom: 18px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  top: 8px;
+  left: 10px;
+  width: 24px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  transform: rotate(-10deg);
+}
+
+.reference-avatar__leaf--left {
+  left: 10px;
+  transform: rotate(-14deg);
+}
+
+.reference-avatar__leaf--right {
+  right: 10px;
+  transform: scaleX(-1) rotate(-14deg);
+}
+
+.reference-avatar__leaf--right::after {
+  transform: scaleX(-1) rotate(-10deg);
+}
+
+.palette-card--avatar .palette-card__body {
+  color: #172033;
+}
+
+.palette-card--avatar .palette-swatch__chip--bg {
+  border-color: rgba(17, 24, 39, 0.06);
+}
+
+.palette-card--avatar .palette-swatch__chip--main {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.palette-card--avatar .palette-card__meta .pill {
+  background: color-mix(in srgb, var(--palette-main) 16%, white);
+  color: color-mix(in srgb, var(--palette-main) 72%, #173044);
+  border-color: color-mix(in srgb, var(--palette-main) 18%, white);
+}
+
+.palette-card--avatar .palette-card__meta .pill--soft {
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.palette-card--avatar .palette-card__vibe {
+  color: #425066;
+}
+
+.palette-card--avatar .palette-swatches {
+  margin-top: 18px;
+}
+
+.palette-card--avatar .palette-swatch__label {
+  color: #516075;
+}
+
+.palette-card--avatar .palette-swatch__chip--main {
   background: var(--palette-main);
-  border: 4px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 24px color-mix(in srgb, var(--palette-main) 35%, transparent);
+  color: white;
+}
+
+.palette-card--avatar .palette-swatch__chip--bg {
+  background: var(--palette-bg);
+  color: #1f2937;
+}
+
+@media (max-width: 720px) {
+  .reference-avatar-stage {
+    min-height: 280px;
+  }
+
+  .reference-avatar {
+    width: 270px;
+    height: 206px;
+  }
+
+  .reference-avatar__shell {
+    width: 212px;
+    height: 166px;
+  }
+
+  .reference-avatar-headset {
+    top: 120px;
+    width: 58px;
+    height: 102px;
+  }
+
+  .reference-avatar-headset--left {
+    left: 22px;
+  }
+
+  .reference-avatar-headset--right {
+    right: 22px;
+  }
+
+  .reference-avatar__eyes {
+    gap: 60px;
+  }
+
+  .reference-avatar__sprout {
+    width: 104px;
+    top: -14px;
+  }
+
+  .reference-avatar__leaf {
+    width: 46px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .reference-avatar {
+    width: 236px;
+  }
+
+  .reference-avatar__shell {
+    width: 194px;
+    height: 154px;
+  }
+
+  .reference-avatar-headset {
+    width: 50px;
+    height: 92px;
+  }
+
+  .reference-avatar__eyes {
+    top: 52px;
+    gap: 52px;
+  }
+
+  .reference-avatar__eye {
+    width: 30px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 960px) {
+  .palette-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .palette-card__body {
