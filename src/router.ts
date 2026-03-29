@@ -3,6 +3,7 @@ import ArchivePage from './views/ArchivePage.vue'
 import DailyDetailPage from './views/DailyDetailPage.vue'
 import HomePage from './views/HomePage.vue'
 import PapersPage from './views/PapersPage.vue'
+import AvatarPalettePage from './views/AvatarPalettePage.vue'
 
 export const router = createRouter({
   history: createWebHashHistory(),
@@ -26,6 +27,11 @@ export const router = createRouter({
       path: '/papers/latest',
       name: 'papers-latest',
       component: PapersPage,
+    },
+    {
+      path: '/avatar-palette',
+      name: 'avatar-palette',
+      component: AvatarPalettePage,
     },
   ],
 })

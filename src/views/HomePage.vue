@@ -80,6 +80,9 @@ const highlights = [
               <RouterLink class="button button--primary" :to="`/daily/${todayEntry.slug}`">
                 打开今日详情
               </RouterLink>
+              <RouterLink class="button button--ghost" to="/avatar-palette">
+                豆芽头像配色
+              </RouterLink>
               <RouterLink class="button button--ghost" to="/papers/latest">
                 最新大模型论文
               </RouterLink>
