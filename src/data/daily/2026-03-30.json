@@ -1,77 +1,72 @@
 {
   "date": "2026-03-30",
   "slug": "2026-03-30",
-  "title": "AI Daily: deployable AI systems, governed workflows, and agent tooling are converging",
-  "summary": "今天这版 AI Daily 已经不是单点 GitHub 信号，而是把 GitHub、产品发布、行业事件和研究线索一起拉进了生成链。像 bytedance/deer-flow、BerriAI/litellm 这样的开源动向，正在和企业语音 agent、安全测试、生产率研究汇成同一条“AI 正在走向真实生产环境”的主线。",
-  "featured": {
-    "title": "bytedance/deer-flow became today’s strongest GitHub signal",
-    "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. 它的 star、最近更新时间和话题标签一起说明，这不是模板占位，而是真实可验证的外部项目动态。",
-    "source": "GitHub API",
-    "href": "https://github.com/bytedance/deer-flow"
-  },
-  "githubUpdates": [
+  "title": "今日 AI 资讯：从产品路线到产业入口，AI 竞争正在变得更现实",
+  "summary": "今天的 AI 新闻已经不再只是“谁又发了一个更强的模型”，而是在同时指向产品取舍、平台入口、企业落地和就业压力这些更现实的问题。对普通读者来说，这种变化反而更值得看，因为它说明 AI 正在真正进入产业层面。",
+  "intro": "如果把今天分散的几条 AI 新闻放在一起看，会发现行业焦点正在明显变化：头部公司开始重新衡量产品路线，平台型公司重新思考入口，企业继续推进 AI 落地，而公众则越来越在意 AI 会怎样改变工作和组织。AI 这件事，已经越来越不像单纯的技术新闻了。",
+  "sections": [
     {
-      "title": "bytedance/deer-flow stayed active with real builder attention",
-      "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. 当前 star 约 52992，最近更新时间 2026-03-30。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
-      "source": "GitHub API",
-      "href": "https://github.com/bytedance/deer-flow"
+      "key": "top",
+      "title": "今日重点",
+      "items": [
+        {
+          "title": "苹果正在把 AI 当成平台入口能力来重新设计",
+          "summary": "如果苹果的调整方向属实，那么它看重的就不只是某个聊天功能，而是 AI 如何更深地进入系统入口、应用分发和搜索式体验。对行业来说，这意味着 AI 竞争越来越像平台战争，而不只是模型竞赛。",
+          "source": "Bloomberg.com",
+          "href": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPNmxjb3ZqTDFHd0R6UmhuV2RSTFRnQkt3Vm9hWWluYTRBZTZReG9LT1pzZzByMi1lYndCV0ctbldzeENyYUxqYWdMLWl6eHFQa0YweFM1NUxLNWo1ZjFsNDNjWkl2U05Tb3ljbFdaZkxhVE5XSV90YkhESi1yNzhuc0p5V2FrR0l4ak92enJUOFdmOUo2RHlNTlRCc1htaUxqQzFFSTVsV0JHRFFNRldPWkJUdjQtWmhxb1Fhd0huR09VMC1WU09hSjNSRFBYZy1sQ1VvNWJmRXc?oc=5",
+          "publishedAt": "Mon, 30 Mar 2026 04:12:42 GMT"
+        },
+        {
+          "title": "OpenAI 再次成为今天 AI 新闻的中心话题",
+          "summary": "围绕 OpenAI 的报道重点已经不只是模型能力本身，而是产品路线、资源投入和商业优先级的重新排序。这说明头部 AI 公司开始进入更现实的经营阶段，市场更关心它们接下来把资源押在哪些真正能长期成立的方向上。",
+          "source": "WSJ",
+          "href": "https://news.google.com/rss/articles/CBMiogNBVV95cUxNWWQ3cmNHYmFaU2RVUE9hVkxPckd0QUdXd2FpVmRqMGxKYS1aSnJNQjN4MjZtUzhvQWtXWGV3UWMwMVJjU0s0Q3UtUWp6UmRaMEdWak5UU0lLNjl6dEh0ZXFGNFFfMTBLbjRJUHgzQ2NlRUx3cTNTOHY2ZXpjYzVDLXFLaFUtUWRBbFJOTGpQVkVRYnFWOE45RzRVTjdrQ3pNcG5RRUVFeFZNNUxxVnczMk5CT05RMG9qSVBNbmhjVy1QSElNMDJ3cmxHd1FYNzBtNjY2a1BFa3F5QXBVZDd2V2NxU3lOYzZqVHJDRUNLSHZoWnQ3R21ETzlpaVFVbUx3bGpTX0lwTGd1eGdzUWRWb2Uza3NkRlhnOEx0VElxcUdJMXNhSnc3U21rZ3Q3ZF91N0xVejM4NGl3S3FqU1RIQUhxR2ljbGNKWGNaQnF5eHFCZWozc3I0Rk5ET0FnT3R0dTRoN3k4YVVFaU5NOS03a3RxS0ctRXhaZGNMc3c1VWZpWGMzREE2YUZiYVFfMmN6MC1RbHRjanZYSThMXzB5Tldn?oc=5",
+          "publishedAt": "Mon, 30 Mar 2026 02:16:00 GMT"
+        }
+      ]
     },
     {
-      "title": "BerriAI/litellm stayed active with real builder attention",
-      "summary": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM] 当前 star 约 41468，最近更新时间 2026-03-30。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
-      "source": "GitHub API",
-      "href": "https://github.com/BerriAI/litellm"
+      "key": "company",
+      "title": "公司与产业动向",
+      "items": [
+        {
+          "title": "Gender gap in AI job displacement",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "GZERO Media",
+          "href": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYmFMaEIta01VdEVQREYxQTJOVXBHdzdiSTRLM0hFUUZJSGUxQ2JUMmZrdzBzbjRKSjloY2l2SGlSWmJTdDJuTnp5bTFfdENyT2ZiZnpjNFJmYklILUs0WUlqR0cwdW43Y3VrUHZ0TUI0MngtMGVZanV0SDVROVVVNW1EN0hHbmxtYUV4WTF5OWpVSm1SZlVPUDlkNDlCZXM3UGg1cnFtc2ptVWPSAYABQVVfeXFMT3I1aXpoSm91bDVRTTZ4djZ5MnRoUkV1U0RZZlZDcV9aVy1BaFdMU0gxVDhzbHdJckhiS2UxRWp6eURBWFMtTFlsZGg3VWNtRjhmQmpfY0FZLXd5QkE1MmhIcG9JVXNBZWZ3UnRHblBucmQ2ZVY3RnNsVUpkTlEtOWU?oc=5",
+          "publishedAt": "Sun, 29 Mar 2026 18:53:01 GMT"
+        },
+        {
+          "title": "企业开始更频繁地用 AI 解释效率与裁员问题",
+          "summary": "AI 对就业的影响正在从抽象讨论走向现实叙事。越来越多公司和管理者把组织收缩、效率改革与 AI 联系在一起，这种变化会进一步放大公众对岗位替代和职业重构的关注。",
+          "source": "BBC",
+          "href": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE96bHJKdVVza1Q0OU1Rd25wSjZrbWhSSUNXWFR4Rll3X2U0R3k1TjRabGoteHFQQ0pVNU1aRm9kRmw5aWR3VV9NaHJlZ29TbEdwZnpldFhVbDcxdw?oc=5",
+          "publishedAt": "Sun, 29 Mar 2026 23:07:04 GMT"
+        }
+      ]
     },
     {
-      "title": "langchain-ai/open_deep_research stayed active with real builder attention",
-      "summary": "A notable AI repository is active today. 当前 star 约 10975，最近更新时间 2026-03-30。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
-      "source": "GitHub API",
-      "href": "https://github.com/langchain-ai/open_deep_research"
+      "key": "view",
+      "title": "值得关注的趋势",
+      "items": [
+        {
+          "title": "Trump Administration Proposes Federal AI Standard",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "Modern Distribution Management",
+          "href": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdng3QXpDdmNyaFpQeHROWHl2TjlZemQ2SGJuaWs3a2x6aEt0S1lLY2w5ZUxod0JhdjZKVDdRRjRweDJvWk9jU1UxazJqZ29PeHlQVXREYXpzYmttczl5V0V5UmhISUFpbnFVQzhyT21nWmZhUUEySVhCTElPU2tIZlRnSkN5Z3dQR2NrVzNlLVlmTnM?oc=5",
+          "publishedAt": "Sun, 29 Mar 2026 23:19:47 GMT"
+        },
+        {
+          "title": "Deploying AI as new engine of economic growth",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "China Daily",
+          "href": "https://news.google.com/rss/articles/CBMifkFVX3lxTE00U3BKQS1ySFVMME5fVVp2MS1yWFR1MFR0emtmTThFSjRUSHgyYkRUcnhraU9odWRfcm5mMVhRTkJMWDdwQXYwWmdIZjZTZFJodWFUcGY5ZkRrUEk0ZTFTWkV5VFJtVHFVT0hadk5JenBGYjlvblVXTEc1Zzh5dw?oc=5",
+          "publishedAt": "Mon, 30 Mar 2026 01:08:00 GMT"
+        }
+      ]
     }
   ],
-  "productUpdates": [
-    {
-      "title": "IBM and ElevenLabs pushed enterprise agentic AI toward voice-first deployment",
-      "summary": "IBM 与 ElevenLabs 宣布把 TTS / STT 接进 watsonx Orchestrate，让企业可以把更自然、多语言、可治理的语音体验接入 agentic workflow。这个信号说明产品化重点已经不只是“更会聊”，而是让 AI agent 真正进入客户服务、员工支持和高并发企业流程。",
-      "source": "IBM Newsroom",
-      "href": "https://newsroom.ibm.com/2026-03-25-enterprise-ai-finds-its-voice-elevenlabs-and-ibm-bring-premium-voice-capabilities-to-agentic-ai"
-    },
-    {
-      "title": "OVHcloud acquired Dragon LLM and launched an AI lab for sovereign model services",
-      "summary": "OVHcloud 宣布收购 Dragon LLM 并启动 AI lab，方向明显是把面向受监管行业的 specialized LLM、主权部署和企业服务能力做成云产品。这个信号代表欧洲云厂商正在把“可控、可部署、合规友好”的 AI 当成真正的产品卖点。",
-      "source": "GlobeNewswire / OVHcloud",
-      "href": "https://www.globenewswire.com/news-release/2026/03/25/3261920/0/en/OVHcloud-announces-the-acquisition-of-Dragon-LLM-a-developer-of-specialized-generative-AI-models-and-is-launching-its-AI-lab-to-offer-new-services-to-its-customers-based-on-LLMs.html"
-    }
-  ],
-  "majorEvents": [
-    {
-      "title": "GitHub put AI security and AI-powered SDLC themes front-and-center around RSAC 2026",
-      "summary": "GitHub 的 RSAC 2026 页面把重点放在 developer-native security、AI-powered SDLC 与安全治理上。这个信号很直接：随着 Copilot 这类能力把开发速度继续拉高，平台方已经把“AI 加速开发之后，安全怎么跟上”当成主舞台议题。",
-      "source": "GitHub Events",
-      "href": "https://github.com/resources/events/github-rsac2026"
-    },
-    {
-      "title": "Novee used RSAC 2026 to frame AI red teaming as a continuous testing problem",
-      "summary": "Novee 在 RSAC 2026 推出专门攻击 LLM 应用的 AI pentesting agent，强调多步攻击链、持续测试与 CI/CD 集成。这个事件说明安全行业已经默认：AI app 不是普通 web app，测试方法也必须升级到更贴近真实对抗者的模式。",
-      "source": "Help Net Security",
-      "href": "https://www.helpnetsecurity.com/2026/03/25/novee-ai-pentesting-agent/"
-    }
-  ],
-  "researchPicks": [
-    {
-      "title": "TraceSIR focused on a real bottleneck of agent systems: how to debug long execution traces",
-      "summary": "TraceSIR 提出用多代理框架去结构化分析 agent 的长执行轨迹，并配套 TraceBench 与 ReportEval。它的重要性在于：研究重点不再只是做更炫的 agent demo，而是开始解决 production 里最痛的调试、归因和复盘问题。",
-      "source": "arXiv 2603.00623",
-      "href": "https://arxiv.org/abs/2603.00623"
-    },
-    {
-      "title": "Atlanta Fed found AI adoption is already lifting productivity, but unevenly",
-      "summary": "这份基于近 750 位企业高管调查的 working paper 发现：AI 投入已经较广泛，生产率提升为正且预计 2026 年继续增强，同时短期整体就业下滑证据有限，但岗位结构正在变化。它像一个现实校准器：AI 的真正影响正在组织层面慢慢显形。",
-      "source": "Federal Reserve Bank of Atlanta",
-      "href": "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/03/25/04-artificial-intelligence-productivity-and-the-workforce-evidence-from-corporate-executives"
-    }
-  ],
-  "sproutNote": "这次最关键的变化，不再只是 GitHub 真数据进了流水线，而是 product、events、research 三块也开始被真实来源驱动。这样生成出来的日报才更接近一个能持续运转的内容系统，而不是半自动草稿。",
-  "reminderSummary": "今日 AI Daily：bytedance/deer-flow、BerriAI/litellm 等开源动态之外，IBM × ElevenLabs 的企业语音 agent、RSAC 2026 的 AI 安全议题，以及 TraceSIR / Atlanta Fed 研究也已进入生成链。",
-  "generatedAt": "2026-03-30T04:54:35.166Z"
+  "closing": "一句话说，今天最值得关注的不是某个模型又强了多少，而是 AI 正在变成一场更现实的产业竞争：谁拿入口，谁有落地能力，谁能承受转型成本，接下来都会越来越清楚。",
+  "reminderSummary": "今日 AI 资讯：头部公司开始重排产品路线，平台入口之争和企业落地继续升温。",
+  "generatedAt": "2026-03-30T06:35:41.795Z"
 }

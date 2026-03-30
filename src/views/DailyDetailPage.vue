@@ -2,60 +2,67 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { getEntryBySlug } from '../data/ai-daily'
-import { formatDateLabel, getSections, localizeSummary, localizeTitle } from '../data/news-editorial'
 
 const route = useRoute()
 const entry = computed(() => getEntryBySlug(String(route.params.slug || '')))
-const sections = computed(() => (entry.value ? getSections(entry.value) : []))
+
+function formatDateLabel(date: string) {
+  const [year, month, day] = date.split('-')
+  return `${year} 年 ${Number(month)} 月 ${Number(day)} 日`
+}
 </script>
 
 <template>
   <div class="page-shell">
     <main class="news-layout" v-if="entry">
       <div class="detail-nav">
-        <RouterLink class="detail-nav__link" to="/">← 返回今天首页</RouterLink>
+        <RouterLink class="detail-nav__link" to="/">← 返回首页</RouterLink>
       </div>
 
-      <header class="news-hero news-hero--detail">
+      <header class="hero-card">
         <div>
-          <p class="news-hero__eyebrow">往期 AI 资讯归档</p>
-          <h1>{{ formatDateLabel(entry.date) }} AI 资讯</h1>
-          <p class="news-hero__desc">{{ entry.summary }}</p>
+          <p class="hero-card__eyebrow">AI 资讯归档</p>
+          <h1>{{ entry.title }}</h1>
+          <p class="hero-card__summary">{{ entry.summary }}</p>
         </div>
-        <div class="news-hero__meta">
-          <span class="news-badge">{{ entry.date }}</span>
-          <span class="news-badge news-badge--soft">归档页</span>
+        <div class="hero-card__meta">
+          <span class="badge">{{ formatDateLabel(entry.date) }}</span>
+          <span class="badge badge--soft">按天归档</span>
         </div>
       </header>
 
-      <section v-for="section in sections" :key="section.key" class="news-section">
-        <div class="section-heading">
-          <h3>{{ section.label }}</h3>
+      <section class="article-card">
+        <p class="article-card__intro">{{ entry.intro }}</p>
+      </section>
+
+      <section v-for="section in entry.sections" :key="section.key" class="article-card">
+        <div class="section-head">
+          <h2>{{ section.title }}</h2>
         </div>
 
-        <article v-for="item in section.items" :key="item.title" class="news-article">
-          <div class="news-article__main">
-            <h4>{{ localizeTitle(item) }}</h4>
-            <p>{{ localizeSummary(item) }}</p>
+        <article v-for="item in section.items" :key="item.title" class="news-item">
+          <div class="news-item__main">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
           </div>
-          <div class="news-article__side">
-            <span class="source-label">来源</span>
+          <div class="news-item__side">
+            <span>来源</span>
             <strong>{{ item.source }}</strong>
-            <a v-if="item.href" :href="item.href" target="_blank" rel="noreferrer">打开原文 ↗</a>
+            <a :href="item.href" target="_blank" rel="noreferrer">查看原文 ↗</a>
           </div>
         </article>
       </section>
 
-      <section class="editor-note">
-        <h3>一句话总结</h3>
-        <p>{{ entry.sproutNote }}</p>
+      <section class="article-card article-card--closing">
+        <h2>当日结语</h2>
+        <p>{{ entry.closing }}</p>
       </section>
     </main>
 
     <main class="news-layout" v-else>
-      <section class="daily-overview daily-overview--empty">
-        <h2>这一天的归档没找到</h2>
-        <p>你可以先回首页看今天的 AI 资讯。</p>
+      <section class="article-card article-card--empty">
+        <h2>这一天的 AI 资讯没找到</h2>
+        <p>你可以先回首页看今天的内容。</p>
         <RouterLink class="detail-nav__link" to="/">返回首页</RouterLink>
       </section>
     </main>

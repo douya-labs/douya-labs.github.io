@@ -17,10 +17,7 @@ export const router = createRouter({
     },
     {
       path: '/item/:slug',
-      redirect: (to) => {
-        const raw = String(to.params.slug || '')
-        return raw.length >= 10 ? `/daily/${raw.slice(0, 10)}` : '/'
-      },
+      redirect: '/',
     },
   ],
 })

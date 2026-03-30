@@ -1,49 +1,37 @@
-export type AiItem = {
+export type NewsItem = {
   title: string
   summary: string
   source: string
-  href?: string
+  href: string
+  publishedAt?: string
 }
 
-export type AiDailyEntry = {
+export type NewsSection = {
+  key: string
+  title: string
+  items: NewsItem[]
+}
+
+export type DailyNewsEntry = {
   date: string
+  slug: string
   title: string
   summary: string
-  featured: AiItem
-  githubUpdates: AiItem[]
-  productUpdates: AiItem[]
-  majorEvents: AiItem[]
-  researchPicks: AiItem[]
-  sproutNote: string
+  intro: string
+  sections: NewsSection[]
+  closing: string
   reminderSummary?: string
   generatedAt?: string
-  slug: string
 }
 
-const dailyModules = import.meta.glob<{ default: AiDailyEntry }>('./daily/*.json', { eager: true })
+const dailyModules = import.meta.glob<{ default: DailyNewsEntry }>('./daily/*.json', { eager: true })
 
 export const dailyEntries = Object.values(dailyModules)
   .map((module) => module.default)
-  .sort((a, b) => b.date.localeCompare(a.date)) as AiDailyEntry[]
+  .sort((a, b) => b.date.localeCompare(a.date)) as DailyNewsEntry[]
 
 export const todayEntry = dailyEntries[0]
 
 export function getEntryBySlug(slug: string) {
   return dailyEntries.find((entry) => entry.slug === slug)
-}
-
-export function getEntryStats(entry: AiDailyEntry) {
-  const totalItems =
-    entry.githubUpdates.length +
-    entry.productUpdates.length +
-    entry.majorEvents.length +
-    entry.researchPicks.length
-
-  return {
-    totalItems,
-    githubCount: entry.githubUpdates.length,
-    productCount: entry.productUpdates.length,
-    eventCount: entry.majorEvents.length,
-    researchCount: entry.researchPicks.length,
-  }
 }

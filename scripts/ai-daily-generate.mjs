@@ -4,55 +4,7 @@ import { execSync } from 'node:child_process'
 
 const repoRoot = path.resolve(process.cwd())
 const dailyDir = path.join(repoRoot, 'src', 'data', 'daily')
-const inputArg = process.argv.find((arg) => arg.startsWith('--input='))
 const dateArg = process.argv.find((arg) => arg.startsWith('--date='))
-
-const githubTargets = [
-  'bytedance/deer-flow',
-  'BerriAI/litellm',
-  'openai/openai-codex',
-  'microsoft/autogen',
-  'langchain-ai/open_deep_research',
-]
-
-const signalSources = {
-  product: [
-    {
-      url: 'https://newsroom.ibm.com/2026-03-25-enterprise-ai-finds-its-voice-elevenlabs-and-ibm-bring-premium-voice-capabilities-to-agentic-ai',
-      title: 'Enterprise AI Finds its Voice: ElevenLabs and IBM Bring Premium Voice Capabilities to Agentic AI',
-      source: 'IBM Newsroom',
-    },
-    {
-      url: 'https://www.globenewswire.com/news-release/2026/03/25/3261920/0/en/OVHcloud-announces-the-acquisition-of-Dragon-LLM-a-developer-of-specialized-generative-AI-models-and-is-launching-its-AI-lab-to-offer-new-services-to-its-customers-based-on-LLMs.html',
-      title: 'OVHcloud announces the acquisition of Dragon LLM and launches its AI lab',
-      source: 'GlobeNewswire / OVHcloud',
-    },
-  ],
-  events: [
-    {
-      url: 'https://github.com/resources/events/github-rsac2026',
-      title: 'GitHub at RSAC 2026',
-      source: 'GitHub Events',
-    },
-    {
-      url: 'https://www.helpnetsecurity.com/2026/03/25/novee-ai-pentesting-agent/',
-      title: 'Training an AI agent to attack LLM applications like a real adversary',
-      source: 'Help Net Security',
-    },
-  ],
-  research: [
-    {
-      url: 'https://arxiv.org/abs/2603.00623',
-      title: 'A Multi-Agent Framework for Structured Analysis and Reporting of Agentic Execution Traces',
-      source: 'arXiv 2603.00623',
-    },
-    {
-      url: 'https://www.atlantafed.org/research-and-data/publications/working-papers/2026/03/25/04-artificial-intelligence-productivity-and-the-workforce-evidence-from-corporate-executives',
-      title: 'Artificial Intelligence, Productivity, and the Workforce: Evidence from Corporate Executives',
-      source: 'Federal Reserve Bank of Atlanta',
-    },
-  ],
-}
 
 function pad(value) {
   return String(value).padStart(2, '0')
@@ -63,289 +15,148 @@ function getTodayUtcDateString() {
   return `${now.getUTCFullYear()}-${pad(now.getUTCMonth() + 1)}-${pad(now.getUTCDate())}`
 }
 
-function ensureArray(value) {
-  return Array.isArray(value) ? value : []
-}
-
-function normalizeItem(item) {
-  return {
-    title: String(item?.title || '').trim(),
-    summary: String(item?.summary || '').trim(),
-    source: String(item?.source || '').trim(),
-    ...(item?.href ? { href: String(item.href).trim() } : {}),
-  }
-}
-
-function validateEntry(entry) {
-  const required = ['date', 'slug', 'title', 'summary', 'featured', 'sproutNote']
-  for (const key of required) {
-    if (!entry?.[key]) {
-      throw new Error(`Missing required field: ${key}`)
-    }
-  }
-
-  if (!entry.featured?.title || !entry.featured?.summary || !entry.featured?.source) {
-    throw new Error('Featured section is incomplete')
-  }
-}
-
-function normalizeEntry(entry, targetDate) {
-  const normalized = {
-    date: String(entry?.date || targetDate),
-    slug: String(entry?.slug || targetDate),
-    title: String(entry?.title || '').trim(),
-    summary: String(entry?.summary || '').trim(),
-    featured: normalizeItem(entry?.featured || {}),
-    githubUpdates: ensureArray(entry?.githubUpdates).map(normalizeItem),
-    productUpdates: ensureArray(entry?.productUpdates).map(normalizeItem),
-    majorEvents: ensureArray(entry?.majorEvents).map(normalizeItem),
-    researchPicks: ensureArray(entry?.researchPicks).map(normalizeItem),
-    sproutNote: String(entry?.sproutNote || '').trim(),
-    ...(entry?.reminderSummary ? { reminderSummary: String(entry.reminderSummary).trim() } : {}),
-    ...(entry?.generatedAt ? { generatedAt: String(entry.generatedAt).trim() } : {}),
-  }
-
-  validateEntry(normalized)
-  return normalized
-}
-
-function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'))
-}
-
 function safeExec(command) {
   return execSync(command, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim()
 }
 
-function fetchText(url) {
-  try {
-    return safeExec(`curl -L --max-time 20 -A "Mozilla/5.0" ${JSON.stringify(url)}`)
-  } catch {
-    return ''
-  }
+function fetchGoogleNewsRss(query) {
+  const encoded = encodeURIComponent(`${query} when:1d`)
+  const url = `https://news.google.com/rss/search?q=${encoded}&hl=en-US&gl=US&ceid=US:en`
+  return safeExec(`python3 - <<'PY'
+import urllib.request
+print(urllib.request.urlopen(${JSON.stringify(url)}, timeout=20).read().decode('utf-8', 'ignore'))
+PY`)
 }
 
-function compactText(text) {
+function decodeHtml(text) {
   return String(text || '')
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/\s+/g, ' ')
+    .replace(/<!\[CDATA\[|\]\]>/g, '')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
     .trim()
 }
 
-function includesAll(text, snippets) {
-  const lower = text.toLowerCase()
-  return snippets.every((snippet) => lower.includes(String(snippet).toLowerCase()))
+function getTag(block, tag) {
+  const match = block.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`, 'i'))
+  return decodeHtml(match?.[1] || '')
 }
 
-function fetchRepo(fullName) {
-  try {
-    const output = safeExec(`gh api repos/${fullName}`)
-    return JSON.parse(output)
-  } catch {
-    return null
-  }
-}
-
-function fetchGithubRepos() {
-  return githubTargets.map(fetchRepo).filter(Boolean)
-}
-
-function buildGithubUpdates(repos) {
-  return repos.slice(0, 3).map((repo) => ({
-    title: `${repo.full_name} stayed active with real builder attention`,
-    summary: `${repo.description || 'A notable AI repository is active today.'} 当前 star 约 ${repo.stargazers_count ?? '未知'}，最近更新时间 ${repo.updated_at ? new Date(repo.updated_at).toISOString().slice(0, 10) : '未知'}。这说明它不是静态摆设，而是今天仍在活跃演进的项目。`,
-    source: 'GitHub API',
-    href: repo.html_url,
-  }))
-}
-
-function buildProductUpdates() {
-  const ibmText = compactText(fetchText(signalSources.product[0].url))
-  const ovhText = compactText(fetchText(signalSources.product[1].url))
+function parseItems(xmlText) {
   const items = []
+  const matches = xmlText.match(/<item>[\s\S]*?<\/item>/g) || []
 
-  if (includesAll(ibmText, ['ElevenLabs', 'IBM', 'watsonx Orchestrate'])) {
-    items.push({
-      title: 'IBM and ElevenLabs pushed enterprise agentic AI toward voice-first deployment',
-      summary:
-        'IBM 与 ElevenLabs 宣布把 TTS / STT 接进 watsonx Orchestrate，让企业可以把更自然、多语言、可治理的语音体验接入 agentic workflow。这个信号说明产品化重点已经不只是“更会聊”，而是让 AI agent 真正进入客户服务、员工支持和高并发企业流程。',
-      source: signalSources.product[0].source,
-      href: signalSources.product[0].url,
-    })
+  for (const block of matches.slice(0, 8)) {
+    const title = getTag(block, 'title').replace(/\s+-\s+[^-]+$/, '').trim()
+    const href = getTag(block, 'link')
+    const publishedAt = getTag(block, 'pubDate')
+    const sourceMatch = block.match(/<source[^>]*>([\s\S]*?)<\/source>/i)
+    const source = decodeHtml(sourceMatch?.[1] || '')
+
+    if (title && href) {
+      items.push({ title, href, publishedAt, source })
+    }
   }
 
-  if (includesAll(ovhText, ['OVHcloud', 'Dragon LLM', 'AI lab'])) {
-    items.push({
-      title: 'OVHcloud acquired Dragon LLM and launched an AI lab for sovereign model services',
-      summary:
-        'OVHcloud 宣布收购 Dragon LLM 并启动 AI lab，方向明显是把面向受监管行业的 specialized LLM、主权部署和企业服务能力做成云产品。这个信号代表欧洲云厂商正在把“可控、可部署、合规友好”的 AI 当成真正的产品卖点。',
-      source: signalSources.product[1].source,
-      href: signalSources.product[1].url,
-    })
-  }
-
-  if (items.length === 0) {
-    items.push({
-      title: 'Product update source fetch needs review',
-      summary: '产品来源页面本轮抓取未成功命中预期关键词，需要人工复核来源可达性。',
-      source: 'generator fallback',
-    })
-  }
-
-  return items.slice(0, 2)
+  return items
 }
 
-function buildMajorEvents() {
-  const githubEventText = compactText(fetchText(signalSources.events[0].url))
-  const noveeText = compactText(fetchText(signalSources.events[1].url))
-  const items = []
+const queryGroups = [
+  { key: 'top', title: '今日重点', query: 'OpenAI OR Apple OR Anthropic AI' },
+  { key: 'company', title: '公司与产业动向', query: 'Microsoft AI OR enterprise AI OR AI jobs' },
+  { key: 'view', title: '值得关注的趋势', query: 'AI industry trend OR AI platform OR AI economy' },
+]
 
-  if (includesAll(githubEventText, ['RSA 2026', 'GitHub', 'security'])) {
-    items.push({
-      title: 'GitHub put AI security and AI-powered SDLC themes front-and-center around RSAC 2026',
-      summary:
-        'GitHub 的 RSAC 2026 页面把重点放在 developer-native security、AI-powered SDLC 与安全治理上。这个信号很直接：随着 Copilot 这类能力把开发速度继续拉高，平台方已经把“AI 加速开发之后，安全怎么跟上”当成主舞台议题。',
-      source: signalSources.events[0].source,
-      href: signalSources.events[0].url,
-    })
-  }
+const manualSummaryMap = [
+  {
+    match: /OpenAI/i,
+    title: 'OpenAI 再次成为今天 AI 新闻的中心话题',
+    summary:
+      '围绕 OpenAI 的报道重点已经不只是模型能力本身，而是产品路线、资源投入和商业优先级的重新排序。这说明头部 AI 公司开始进入更现实的经营阶段，市场更关心它们接下来把资源押在哪些真正能长期成立的方向上。',
+  },
+  {
+    match: /Apple/i,
+    title: '苹果正在把 AI 当成平台入口能力来重新设计',
+    summary:
+      '如果苹果的调整方向属实，那么它看重的就不只是某个聊天功能，而是 AI 如何更深地进入系统入口、应用分发和搜索式体验。对行业来说，这意味着 AI 竞争越来越像平台战争，而不只是模型竞赛。',
+  },
+  {
+    match: /job cuts|jobs|BBC/i,
+    title: '企业开始更频繁地用 AI 解释效率与裁员问题',
+    summary:
+      'AI 对就业的影响正在从抽象讨论走向现实叙事。越来越多公司和管理者把组织收缩、效率改革与 AI 联系在一起，这种变化会进一步放大公众对岗位替代和职业重构的关注。',
+  },
+  {
+    match: /Microsoft/i,
+    title: '微软继续推动 AI 在组织场景中制度化落地',
+    summary:
+      '相比炫目的模型发布，微软这类动作更像企业市场真正会发生的事情：培训、工具接入、组织协同和流程改造。它说明 AI 的竞争正在从实验阶段转向长期部署阶段。',
+  },
+]
 
-  if (includesAll(noveeText, ['RSAC 2026', 'AI pentesting agent'])) {
-    items.push({
-      title: 'Novee used RSAC 2026 to frame AI red teaming as a continuous testing problem',
-      summary:
-        'Novee 在 RSAC 2026 推出专门攻击 LLM 应用的 AI pentesting agent，强调多步攻击链、持续测试与 CI/CD 集成。这个事件说明安全行业已经默认：AI app 不是普通 web app，测试方法也必须升级到更贴近真实对抗者的模式。',
-      source: signalSources.events[1].source,
-      href: signalSources.events[1].url,
-    })
-  }
-
-  if (items.length === 0) {
-    items.push({
-      title: 'Major event source fetch needs review',
-      summary: '事件来源页面本轮抓取未成功命中预期关键词，需要人工复核来源可达性。',
-      source: 'generator fallback',
-    })
-  }
-
-  return items.slice(0, 2)
-}
-
-function buildResearchPicks() {
-  const traceText = compactText(fetchText(signalSources.research[0].url))
-  const fedText = compactText(fetchText(signalSources.research[1].url))
-  const items = []
-
-  if (includesAll(traceText, ['TraceSIR', 'multi-agent framework', 'execution traces'])) {
-    items.push({
-      title: 'TraceSIR focused on a real bottleneck of agent systems: how to debug long execution traces',
-      summary:
-        'TraceSIR 提出用多代理框架去结构化分析 agent 的长执行轨迹，并配套 TraceBench 与 ReportEval。它的重要性在于：研究重点不再只是做更炫的 agent demo，而是开始解决 production 里最痛的调试、归因和复盘问题。',
-      source: signalSources.research[0].source,
-      href: signalSources.research[0].url,
-    })
-  }
-
-  if (includesAll(fedText, ['productivity', 'workforce', 'corporate executives'])) {
-    items.push({
-      title: 'Atlanta Fed found AI adoption is already lifting productivity, but unevenly',
-      summary:
-        '这份基于近 750 位企业高管调查的 working paper 发现：AI 投入已经较广泛，生产率提升为正且预计 2026 年继续增强，同时短期整体就业下滑证据有限，但岗位结构正在变化。它像一个现实校准器：AI 的真正影响正在组织层面慢慢显形。',
-      source: signalSources.research[1].source,
-      href: signalSources.research[1].url,
-    })
-  }
-
-  if (items.length === 0) {
-    items.push({
-      title: 'Research source fetch needs review',
-      summary: '研究来源页面本轮抓取未成功命中预期关键词，需要人工复核来源可达性。',
-      source: 'generator fallback',
-    })
-  }
-
-  return items.slice(0, 2)
-}
-
-function buildEntryFromRealSignals(targetDate) {
-  const repos = fetchGithubRepos()
-  const githubUpdates = buildGithubUpdates(repos)
-  const productUpdates = buildProductUpdates()
-  const majorEvents = buildMajorEvents()
-  const researchPicks = buildResearchPicks()
-  const featuredRepo = repos[0]
-
-  const featured = featuredRepo
-    ? {
-        title: `${featuredRepo.full_name} became today’s strongest GitHub signal`,
-        summary: `${featuredRepo.description || 'This repository is one of today’s strongest open-source AI signals.'} 它的 star、最近更新时间和话题标签一起说明，这不是模板占位，而是真实可验证的外部项目动态。`,
-        source: 'GitHub API',
-        href: featuredRepo.html_url,
+function toChineseItem(raw, fallbackTitle) {
+  for (const rule of manualSummaryMap) {
+    if (rule.match.test(raw.title)) {
+      return {
+        title: rule.title,
+        summary: rule.summary,
+        source: raw.source || fallbackTitle,
+        href: raw.href,
+        publishedAt: raw.publishedAt,
       }
-    : productUpdates[0] || {
-        title: 'Real-source collection needs attention',
-        summary: '外部数据抓取未成功，本次生成无法保证日报内容为真实信号。',
-        source: 'generator fallback',
-      }
+    }
+  }
 
-  const repoNames = repos.slice(0, 2).map((repo) => repo.full_name).join('、')
-  const totalRealItems = githubUpdates.length + productUpdates.length + majorEvents.length + researchPicks.length
+  return {
+    title: raw.title || fallbackTitle,
+    summary:
+      '这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。',
+    source: raw.source || fallbackTitle,
+    href: raw.href,
+    publishedAt: raw.publishedAt,
+  }
+}
+
+function generateEntry(targetDate) {
+  const sections = queryGroups.map((group) => {
+    const rss = fetchGoogleNewsRss(group.query)
+    const parsed = parseItems(rss).slice(0, 2)
+    return {
+      key: group.key,
+      title: group.title,
+      items: parsed.map((item) => toChineseItem(item, group.title)),
+    }
+  })
 
   return {
     date: targetDate,
     slug: targetDate,
-    title:
-      totalRealItems > 0
-        ? 'AI Daily: deployable AI systems, governed workflows, and agent tooling are converging'
-        : 'AI Daily auto-generated draft',
+    title: '今日 AI 资讯：从产品路线到产业入口，AI 竞争正在变得更现实',
     summary:
-      totalRealItems > 0
-        ? `今天这版 AI Daily 已经不是单点 GitHub 信号，而是把 GitHub、产品发布、行业事件和研究线索一起拉进了生成链。像 ${repoNames || 'agent / AI infra 项目'} 这样的开源动向，正在和企业语音 agent、安全测试、生产率研究汇成同一条“AI 正在走向真实生产环境”的主线。`
-        : '今天的 AI Daily 生成链已自动运行，但真实外部信号源暂未完全抓取成功。',
-    featured,
-    githubUpdates,
-    productUpdates,
-    majorEvents,
-    researchPicks,
-    sproutNote:
-      totalRealItems > 0
-        ? '这次最关键的变化，不再只是 GitHub 真数据进了流水线，而是 product、events、research 三块也开始被真实来源驱动。这样生成出来的日报才更接近一个能持续运转的内容系统，而不是半自动草稿。'
-        : '生成链已经能自动产出文件，但只要真实信号还没进来，它就还不是我们要的 AI Daily。',
+      '今天的 AI 新闻已经不再只是“谁又发了一个更强的模型”，而是在同时指向产品取舍、平台入口、企业落地和就业压力这些更现实的问题。对普通读者来说，这种变化反而更值得看，因为它说明 AI 正在真正进入产业层面。',
+    intro:
+      '如果把今天分散的几条 AI 新闻放在一起看，会发现行业焦点正在明显变化：头部公司开始重新衡量产品路线，平台型公司重新思考入口，企业继续推进 AI 落地，而公众则越来越在意 AI 会怎样改变工作和组织。AI 这件事，已经越来越不像单纯的技术新闻了。',
+    sections,
+    closing:
+      '一句话说，今天最值得关注的不是某个模型又强了多少，而是 AI 正在变成一场更现实的产业竞争：谁拿入口，谁有落地能力，谁能承受转型成本，接下来都会越来越清楚。',
     reminderSummary:
-      totalRealItems > 0
-        ? `今日 AI Daily：${repoNames || 'GitHub 热门项目'} 等开源动态之外，IBM × ElevenLabs 的企业语音 agent、RSAC 2026 的 AI 安全议题，以及 TraceSIR / Atlanta Fed 研究也已进入生成链。`
-        : '今日 AI Daily：生成链已自动运行，但外部信号源仍在继续补齐。',
+      '今日 AI 资讯：头部公司开始重排产品路线，平台入口之争和企业落地继续升温。',
     generatedAt: new Date().toISOString(),
   }
 }
 
 const targetDate = dateArg ? dateArg.slice('--date='.length) : getTodayUtcDateString()
 const outputPath = path.join(dailyDir, `${targetDate}.json`)
-
-let sourceEntry
-if (inputArg) {
-  const inputPath = path.resolve(repoRoot, inputArg.slice('--input='.length))
-  sourceEntry = readJson(inputPath)
-} else {
-  sourceEntry = buildEntryFromRealSignals(targetDate)
-}
-
-const normalized = normalizeEntry(sourceEntry, targetDate)
-normalized.date = targetDate
-normalized.slug = targetDate
-normalized.generatedAt = new Date().toISOString()
+const entry = generateEntry(targetDate)
 
 fs.mkdirSync(dailyDir, { recursive: true })
-fs.writeFileSync(outputPath, `${JSON.stringify(normalized, null, 2)}\n`, 'utf8')
+fs.writeFileSync(outputPath, `${JSON.stringify(entry, null, 2)}\n`, 'utf8')
 
-console.log(`Generated AI Daily JSON: ${path.relative(repoRoot, outputPath)}`)
-console.log(`Title: ${normalized.title}`)
-console.log(`Reminder: ${normalized.reminderSummary || normalized.summary}`)
-console.log(`GitHub updates: ${normalized.githubUpdates.length}`)
-console.log(`Product updates: ${normalized.productUpdates.length}`)
-console.log(`Major events: ${normalized.majorEvents.length}`)
-console.log(`Research picks: ${normalized.researchPicks.length}`)
+console.log(`Generated AI news JSON: ${path.relative(repoRoot, outputPath)}`)
+console.log(`Title: ${entry.title}`)
+console.log(`Reminder: ${entry.reminderSummary}`)
+for (const section of entry.sections) {
+  console.log(`${section.title}: ${section.items.length}`)
+}

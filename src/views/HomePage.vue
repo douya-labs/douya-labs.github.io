@@ -1,70 +1,63 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import {
-  formatDateLabel,
-  getArchiveEntries,
-  getSections,
-  getTodayEntry,
-  localizeSummary,
-  localizeTitle,
-} from '../data/news-editorial'
+import { dailyEntries, todayEntry } from '../data/ai-daily'
 
-const entry = computed(() => getTodayEntry())
-const sections = computed(() => (entry.value ? getSections(entry.value) : []))
-const archives = computed(() => getArchiveEntries(12))
+const entry = computed(() => todayEntry)
+const archives = computed(() => dailyEntries.slice(1, 15))
+
+function formatDateLabel(date: string) {
+  const [year, month, day] = date.split('-')
+  return `${year} 年 ${Number(month)} 月 ${Number(day)} 日`
+}
 </script>
 
 <template>
   <div class="page-shell">
     <main class="news-layout" v-if="entry">
-      <header class="news-hero">
+      <header class="hero-card">
         <div>
-          <p class="news-hero__eyebrow">AI 资讯日报</p>
-          <h1>今天 AI 圈里值得看的事，都放在这里了。</h1>
-          <p class="news-hero__desc">
-            不再拆成很多碎页面。首页直接把当天新闻摊开，尽量用中文写清楚，方便你快速读完。
-          </p>
+          <p class="hero-card__eyebrow">AI 资讯</p>
+          <h1>{{ entry.title }}</h1>
+          <p class="hero-card__summary">{{ entry.summary }}</p>
         </div>
-        <div class="news-hero__meta">
-          <span class="news-badge">{{ formatDateLabel(entry.date) }}</span>
-          <span class="news-badge news-badge--soft">今日更新</span>
+        <div class="hero-card__meta">
+          <span class="badge">{{ formatDateLabel(entry.date) }}</span>
+          <span class="badge badge--soft">每日更新</span>
         </div>
       </header>
 
-      <section class="daily-overview">
-        <h2>{{ formatDateLabel(entry.date) }} AI 资讯</h2>
-        <p>{{ entry.summary }}</p>
+      <section class="article-card">
+        <p class="article-card__intro">{{ entry.intro }}</p>
       </section>
 
-      <section v-for="section in sections" :key="section.key" class="news-section">
-        <div class="section-heading">
-          <h3>{{ section.label }}</h3>
+      <section v-for="section in entry.sections" :key="section.key" class="article-card">
+        <div class="section-head">
+          <h2>{{ section.title }}</h2>
         </div>
 
-        <article v-for="item in section.items" :key="item.title" class="news-article">
-          <div class="news-article__main">
-            <h4>{{ localizeTitle(item) }}</h4>
-            <p>{{ localizeSummary(item) }}</p>
+        <article v-for="item in section.items" :key="item.title" class="news-item">
+          <div class="news-item__main">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
           </div>
-          <div class="news-article__side">
-            <span class="source-label">来源</span>
+          <div class="news-item__side">
+            <span>来源</span>
             <strong>{{ item.source }}</strong>
-            <a v-if="item.href" :href="item.href" target="_blank" rel="noreferrer">打开原文 ↗</a>
+            <a :href="item.href" target="_blank" rel="noreferrer">查看原文 ↗</a>
           </div>
         </article>
       </section>
 
-      <section class="editor-note">
-        <h3>一句话总结</h3>
-        <p>{{ entry.sproutNote }}</p>
+      <section class="article-card article-card--closing">
+        <h2>今日结语</h2>
+        <p>{{ entry.closing }}</p>
       </section>
 
-      <section class="archive-section" v-if="archives.length">
-        <div class="section-heading">
-          <h3>往期日报</h3>
-          <p>详情页只保留按天归档，想回看再点进去。</p>
+      <section v-if="archives.length" class="article-card">
+        <div class="section-head">
+          <h2>往期归档</h2>
+          <p>首页只放今天，旧内容按天归档。</p>
         </div>
-
         <div class="archive-list">
           <RouterLink
             v-for="archive in archives"
@@ -80,8 +73,8 @@ const archives = computed(() => getArchiveEntries(12))
     </main>
 
     <main class="news-layout" v-else>
-      <section class="daily-overview daily-overview--empty">
-        <h2>今天的 AI 资讯还没准备好</h2>
+      <section class="article-card article-card--empty">
+        <h2>今天的 AI 资讯还没生成</h2>
         <p>稍后再来看看。</p>
       </section>
     </main>
