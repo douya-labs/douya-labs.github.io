@@ -1,28 +1,25 @@
 # douya-labs.github.io
 
-GitHub Pages 主页仓库，当前作为 douya-labs 的公开展示站。
+一个面向日常浏览的 AI Daily 站点。
 
-## What this repo is for
-- 对外展示 douya-labs 的首页
-- 承接 bot 不适合在聊天窗口里展示的内容
-- 放 demo、实验页面、项目介绍和分享页
+## 现在这个站点是什么
+- 首页是 AI 圈值得看的内容列表
+- 点进列表项后，可以看单条详情页
+- 内容来源于每日整理的 AI Daily 数据
+- 结构尽量简单，方便后续每天持续更新
 
-## Collaboration
-- 首页结构由主维护者负责
-- 绿豆芽主要负责 `green/` 区域
-- 黄豆芽主要负责 `yellow/` 区域
-- 两者不再绑定固定职能标签，只按不同协作区工作
-- 所有新内容默认先走 PR，再合并到 `main`
+## 路由
+- `/`：首页列表
+- `/item/:slug`：单条详情页
 
-详细规则见：[`COLLAB_RULES.md`](./COLLAB_RULES.md)
+## 开发
+```bash
+npm install
+npm run dev
+npm run build
+```
 
-## Suggested structure
-- `green/`：绿豆芽区域
-- `yellow/`：黄豆芽区域
-- `src/`：当前站点前端源码
-- `.github/workflows/`：GitHub Pages 自动部署配置
-
-## Deploy
+## 部署
 当前使用 GitHub Pages + GitHub Actions 自动部署。
 推送到 `main` 后会自动发布到：
 

@@ -1,81 +1,99 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { getEntryBySlug } from '../data/ai-daily'
+import { getDailyEntryBySlug, getFeedItemBySlug, getRelatedItems } from '../data/ai-feed'
 
 const route = useRoute()
 
-const entry = computed(() => getEntryBySlug(String(route.params.slug || '')))
-
-const sections = computed(() => {
-  if (!entry.value) return []
-
-  return [
-    { eyebrow: 'GITHUB', title: 'GitHub updates', items: entry.value.githubUpdates },
-    { eyebrow: 'PRODUCT', title: 'Product updates', items: entry.value.productUpdates },
-    { eyebrow: 'EVENTS', title: 'Major events', items: entry.value.majorEvents },
-    { eyebrow: 'RESEARCH', title: 'Research picks', items: entry.value.researchPicks },
-  ]
+const item = computed(() => getFeedItemBySlug(String(route.params.slug || '')))
+const dailyEntry = computed(() => {
+  if (!item.value) return undefined
+  return getDailyEntryBySlug(item.value.dailySlug)
+})
+const relatedItems = computed(() => {
+  if (!item.value) return []
+  return getRelatedItems(item.value, 4)
 })
 </script>
 
 <template>
   <div class="page-shell">
-    <div class="bg-orb bg-orb--1" />
-    <div class="bg-orb bg-orb--2" />
-    <div class="bg-grid" />
-
-    <main class="section detail-page" v-if="entry">
+    <main class="layout detail-layout" v-if="item && dailyEntry">
       <div class="detail-nav">
         <RouterLink class="text-link" to="/">← 返回首页</RouterLink>
-        <RouterLink class="text-link" to="/archive">查看历史</RouterLink>
+        <a v-if="item.href" class="text-link" :href="item.href" target="_blank" rel="noreferrer">
+          查看原始来源 ↗
+        </a>
       </div>
 
-      <section class="section__head section__head--tight">
-        <p class="eyebrow">DAILY DETAIL</p>
-        <h2>{{ entry.title }}</h2>
-        <p>{{ entry.summary }}</p>
-      </section>
-
-      <article class="daily-feature">
-        <div class="daily-feature__meta">
-          <span class="pill">{{ entry.date }}</span>
-          <span class="pill pill--soft">Featured</span>
+      <article class="detail-card">
+        <div class="detail-card__meta">
+          <span class="pill">{{ item.date }}</span>
+          <span class="pill pill--soft">{{ item.categoryLabel }}</span>
         </div>
-        <h3>{{ entry.featured.title }}</h3>
-        <p>{{ entry.featured.summary }}</p>
-        <span class="source">Source · {{ entry.featured.source }}</span>
+        <p class="eyebrow">AI DAILY DETAIL</p>
+        <h1>{{ item.title }}</h1>
+        <p class="detail-card__summary">{{ item.summary }}</p>
+
+        <div class="detail-blocks">
+          <section class="detail-block">
+            <h2>为什么值得看</h2>
+            <p>{{ item.highlight }}</p>
+          </section>
+
+          <section class="detail-block">
+            <h2>来源</h2>
+            <p>{{ item.source }}</p>
+          </section>
+
+          <section class="detail-block">
+            <h2>所属日报</h2>
+            <p>{{ dailyEntry.title }}</p>
+            <p class="detail-block__sub">{{ dailyEntry.summary }}</p>
+          </section>
+
+          <section class="detail-block">
+            <h2>豆芽备注</h2>
+            <p>{{ dailyEntry.sproutNote }}</p>
+          </section>
+        </div>
       </article>
 
-      <div class="daily-sections detail-sections">
-        <section v-for="section in sections" :key="section.title" class="daily-section-card">
-          <div class="daily-card__head">
-            <p class="eyebrow">{{ section.eyebrow }}</p>
-            <h3>{{ section.title }}</h3>
+      <section class="related-section" v-if="relatedItems.length">
+        <div class="section-head section-head--detail">
+          <div>
+            <p class="eyebrow">MORE FROM THE SAME DAY</p>
+            <h2>同一天还发生了什么</h2>
           </div>
-          <ul class="daily-list">
-            <li v-for="item in section.items" :key="item.title">
-              <strong>{{ item.title }}</strong>
-              <p>{{ item.summary }}</p>
-            </li>
-          </ul>
-        </section>
-      </div>
+        </div>
 
-      <article class="sprout-note">
-        <p class="eyebrow">SPROUT NOTE</p>
-        <p>{{ entry.sproutNote }}</p>
-      </article>
+        <div class="related-list">
+          <RouterLink
+            v-for="related in relatedItems"
+            :key="related.slug"
+            class="related-card"
+            :to="`/item/${related.slug}`"
+          >
+            <div class="feed-card__meta">
+              <span class="pill pill--soft">{{ related.categoryLabel }}</span>
+            </div>
+            <h3>{{ related.title }}</h3>
+            <p>{{ related.summary }}</p>
+          </RouterLink>
+        </div>
+      </section>
     </main>
 
-    <main class="section detail-page" v-else>
+    <main class="layout detail-layout" v-else>
       <div class="detail-nav">
         <RouterLink class="text-link" to="/">← 返回首页</RouterLink>
       </div>
-      <section class="daily-feature">
-        <h3>这一天的日报还没找到</h3>
-        <p>你可以先回首页，或者去历史页看看别的日期。</p>
-      </section>
+
+      <article class="detail-card detail-card--empty">
+        <p class="eyebrow">NOT FOUND</p>
+        <h1>这条内容没找到</h1>
+        <p class="detail-card__summary">可能链接已经失效，或者这条内容还没有生成出来。</p>
+      </article>
     </main>
   </div>
 </template>
