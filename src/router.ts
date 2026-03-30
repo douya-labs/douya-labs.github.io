@@ -11,9 +11,16 @@ export const router = createRouter({
       component: HomePage,
     },
     {
-      path: '/item/:slug',
-      name: 'item-detail',
+      path: '/daily/:slug',
+      name: 'daily-detail',
       component: DailyDetailPage,
+    },
+    {
+      path: '/item/:slug',
+      redirect: (to) => {
+        const raw = String(to.params.slug || '')
+        return raw.length >= 10 ? `/daily/${raw.slice(0, 10)}` : '/'
+      },
     },
   ],
 })

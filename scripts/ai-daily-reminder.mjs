@@ -10,7 +10,7 @@ const files = fs
   .sort()
 
 if (files.length === 0) {
-  console.log('AI Daily 已准备好，查看首页： https://douya-labs.github.io/')
+  console.log('AI 资讯已准备好： https://douya-labs.github.io/')
   process.exit(0)
 }
 
@@ -18,10 +18,9 @@ const latestFile = files[files.length - 1]
 const latestPath = path.join(dailyDir, latestFile)
 const entry = JSON.parse(fs.readFileSync(latestPath, 'utf8'))
 
-const itemUrl = entry?.slug
-  ? `https://douya-labs.github.io/#/item/${entry.slug}-featured-1`
-  : 'https://douya-labs.github.io/'
+const dailyUrl = 'https://douya-labs.github.io/'
+const summary = String(entry?.reminderSummary || entry?.summary || '今日 AI 资讯已更新。')
+  .replace(/^今日 AI Daily：/, '今日 AI 资讯：')
+  .replace(/agent/g, '智能体')
 
-const summary = entry?.reminderSummary || entry?.summary || '今日 AI Daily 已更新。'
-
-console.log(`🌱 ${summary}\n${itemUrl}`)
+console.log(`🌱 ${summary}\n${dailyUrl}`)
