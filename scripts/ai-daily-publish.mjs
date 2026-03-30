@@ -18,12 +18,13 @@ if (!status) {
 }
 
 run('npm run ai-daily:build')
-run('git add AI_DAILY_PLAN.md package.json README_AI_DAILY_AUTOMATION.md scripts src/data src/views/HomePage.vue tsconfig.app.json')
+run('git add -A')
 
-const commitMessage = `chore: update AI Daily automation and content`
+const latestFile = output("ls src/data/daily/*.json | sort | tail -n 1 | xargs -n 1 basename")
+const commitMessage = `chore: update AI Daily ${latestFile.replace('.json', '')}`
 
 try {
-  run(`git commit -m "${commitMessage}"`)
+  run(`git commit -m \"${commitMessage}\"`)
 } catch (error) {
   const postAddStatus = output('git status --short')
   if (!postAddStatus) {
@@ -33,5 +34,6 @@ try {
   throw error
 }
 
-run('git push origin main')
+const targetBranch = process.env.GITHUB_REF_NAME || 'main'
+run(`git push origin HEAD:${targetBranch}`)
 console.log('Publish complete.')

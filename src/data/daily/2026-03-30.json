@@ -1,0 +1,77 @@
+{
+  "date": "2026-03-30",
+  "slug": "2026-03-30",
+  "title": "AI Daily: deployable AI systems, governed workflows, and agent tooling are converging",
+  "summary": "今天这版 AI Daily 已经不是单点 GitHub 信号，而是把 GitHub、产品发布、行业事件和研究线索一起拉进了生成链。像 bytedance/deer-flow、BerriAI/litellm 这样的开源动向，正在和企业语音 agent、安全测试、生产率研究汇成同一条“AI 正在走向真实生产环境”的主线。",
+  "featured": {
+    "title": "bytedance/deer-flow became today’s strongest GitHub signal",
+    "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. 它的 star、最近更新时间和话题标签一起说明，这不是模板占位，而是真实可验证的外部项目动态。",
+    "source": "GitHub API",
+    "href": "https://github.com/bytedance/deer-flow"
+  },
+  "githubUpdates": [
+    {
+      "title": "bytedance/deer-flow stayed active with real builder attention",
+      "summary": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. 当前 star 约 52992，最近更新时间 2026-03-30。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
+      "source": "GitHub API",
+      "href": "https://github.com/bytedance/deer-flow"
+    },
+    {
+      "title": "BerriAI/litellm stayed active with real builder attention",
+      "summary": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM] 当前 star 约 41468，最近更新时间 2026-03-30。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
+      "source": "GitHub API",
+      "href": "https://github.com/BerriAI/litellm"
+    },
+    {
+      "title": "langchain-ai/open_deep_research stayed active with real builder attention",
+      "summary": "A notable AI repository is active today. 当前 star 约 10975，最近更新时间 2026-03-30。这说明它不是静态摆设，而是今天仍在活跃演进的项目。",
+      "source": "GitHub API",
+      "href": "https://github.com/langchain-ai/open_deep_research"
+    }
+  ],
+  "productUpdates": [
+    {
+      "title": "IBM and ElevenLabs pushed enterprise agentic AI toward voice-first deployment",
+      "summary": "IBM 与 ElevenLabs 宣布把 TTS / STT 接进 watsonx Orchestrate，让企业可以把更自然、多语言、可治理的语音体验接入 agentic workflow。这个信号说明产品化重点已经不只是“更会聊”，而是让 AI agent 真正进入客户服务、员工支持和高并发企业流程。",
+      "source": "IBM Newsroom",
+      "href": "https://newsroom.ibm.com/2026-03-25-enterprise-ai-finds-its-voice-elevenlabs-and-ibm-bring-premium-voice-capabilities-to-agentic-ai"
+    },
+    {
+      "title": "OVHcloud acquired Dragon LLM and launched an AI lab for sovereign model services",
+      "summary": "OVHcloud 宣布收购 Dragon LLM 并启动 AI lab，方向明显是把面向受监管行业的 specialized LLM、主权部署和企业服务能力做成云产品。这个信号代表欧洲云厂商正在把“可控、可部署、合规友好”的 AI 当成真正的产品卖点。",
+      "source": "GlobeNewswire / OVHcloud",
+      "href": "https://www.globenewswire.com/news-release/2026/03/25/3261920/0/en/OVHcloud-announces-the-acquisition-of-Dragon-LLM-a-developer-of-specialized-generative-AI-models-and-is-launching-its-AI-lab-to-offer-new-services-to-its-customers-based-on-LLMs.html"
+    }
+  ],
+  "majorEvents": [
+    {
+      "title": "GitHub put AI security and AI-powered SDLC themes front-and-center around RSAC 2026",
+      "summary": "GitHub 的 RSAC 2026 页面把重点放在 developer-native security、AI-powered SDLC 与安全治理上。这个信号很直接：随着 Copilot 这类能力把开发速度继续拉高，平台方已经把“AI 加速开发之后，安全怎么跟上”当成主舞台议题。",
+      "source": "GitHub Events",
+      "href": "https://github.com/resources/events/github-rsac2026"
+    },
+    {
+      "title": "Novee used RSAC 2026 to frame AI red teaming as a continuous testing problem",
+      "summary": "Novee 在 RSAC 2026 推出专门攻击 LLM 应用的 AI pentesting agent，强调多步攻击链、持续测试与 CI/CD 集成。这个事件说明安全行业已经默认：AI app 不是普通 web app，测试方法也必须升级到更贴近真实对抗者的模式。",
+      "source": "Help Net Security",
+      "href": "https://www.helpnetsecurity.com/2026/03/25/novee-ai-pentesting-agent/"
+    }
+  ],
+  "researchPicks": [
+    {
+      "title": "TraceSIR focused on a real bottleneck of agent systems: how to debug long execution traces",
+      "summary": "TraceSIR 提出用多代理框架去结构化分析 agent 的长执行轨迹，并配套 TraceBench 与 ReportEval。它的重要性在于：研究重点不再只是做更炫的 agent demo，而是开始解决 production 里最痛的调试、归因和复盘问题。",
+      "source": "arXiv 2603.00623",
+      "href": "https://arxiv.org/abs/2603.00623"
+    },
+    {
+      "title": "Atlanta Fed found AI adoption is already lifting productivity, but unevenly",
+      "summary": "这份基于近 750 位企业高管调查的 working paper 发现：AI 投入已经较广泛，生产率提升为正且预计 2026 年继续增强，同时短期整体就业下滑证据有限，但岗位结构正在变化。它像一个现实校准器：AI 的真正影响正在组织层面慢慢显形。",
+      "source": "Federal Reserve Bank of Atlanta",
+      "href": "https://www.atlantafed.org/research-and-data/publications/working-papers/2026/03/25/04-artificial-intelligence-productivity-and-the-workforce-evidence-from-corporate-executives"
+    }
+  ],
+  "sproutNote": "这次最关键的变化，不再只是 GitHub 真数据进了流水线，而是 product、events、research 三块也开始被真实来源驱动。这样生成出来的日报才更接近一个能持续运转的内容系统，而不是半自动草稿。",
+  "reminderSummary": "今日 AI Daily：bytedance/deer-flow、BerriAI/litellm 等开源动态之外，IBM × ElevenLabs 的企业语音 agent、RSAC 2026 的 AI 安全议题，以及 TraceSIR / Atlanta Fed 研究也已进入生成链。",
+  "generatedAt": "2026-03-30T04:54:35.166Z"
+}

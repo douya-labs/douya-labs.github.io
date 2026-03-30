@@ -18,10 +18,10 @@ const latestFile = files[files.length - 1]
 const latestPath = path.join(dailyDir, latestFile)
 const entry = JSON.parse(fs.readFileSync(latestPath, 'utf8'))
 
-const dailyUrl = entry?.slug
-  ? `https://douya-labs.github.io/#/daily/${entry.slug}`
+const itemUrl = entry?.slug
+  ? `https://douya-labs.github.io/#/item/${entry.slug}-featured-1`
   : 'https://douya-labs.github.io/'
 
 const summary = entry?.reminderSummary || entry?.summary || '今日 AI Daily 已更新。'
 
-console.log(`🌱 AI Daily 已更新：${summary}\n${dailyUrl}`)
+console.log(`🌱 ${summary}\n${itemUrl}`)
