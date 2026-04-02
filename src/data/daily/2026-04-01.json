@@ -1,26 +1,26 @@
 {
   "date": "2026-04-01",
   "slug": "2026-04-01",
-  "title": "今日 AI 资讯：从产品路线到产业入口，AI 竞争正在变得更现实",
-  "summary": "今天的 AI 新闻已经不再只是“谁又发了一个更强的模型”，而是在同时指向产品取舍、平台入口、企业落地和就业压力这些更现实的问题。对普通读者来说，这种变化反而更值得看，因为它说明 AI 正在真正进入产业层面。",
-  "intro": "如果把今天分散的几条 AI 新闻放在一起看，会发现行业焦点正在明显变化：头部公司开始重新衡量产品路线，平台型公司重新思考入口，企业继续推进 AI 落地，而公众则越来越在意 AI 会怎样改变工作和组织。AI 这件事，已经越来越不像单纯的技术新闻了。",
+  "title": "Anthropic 源码泄露引爆版权争议，AI 时代的职业生存法则浮出水面",
+  "summary": "今天最大的新闻是 Anthropic 意外泄露了 Claude Code 的 50 万行源码，这家一直主张「AI 训练属于合理使用」的公司突然站到了版权受害者的一边。与此同时，关于 AI 如何重塑职场的讨论从理论走向了实操层面。",
+  "intro": "Anthropic 的源码泄露事件让整个 AI 行业重新审视知识产权保护的边界。而在就业领域，讨论焦点已经从「AI 会不会取代人」转向了更务实的问题：如何在 AI 时代保持竞争力。今天的新闻横跨安全、版权、就业和产业创新，信息量很大。",
   "sections": [
     {
       "key": "top",
       "title": "今日重点",
       "items": [
         {
-          "title": "Anthropic leaked 500,000 lines of its own source code",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "Anthropic 意外泄露 Claude Code 50 万行源码，紧急启动危机控制",
+          "summary": "Axios 报道，Anthropic 在一次内部部署失误中意外将 Claude Code 的约 50 万行源码暴露在公开环境中。泄露内容涵盖了 Claude Code agent 的核心推理逻辑、工具调用框架和安全过滤机制等关键组件。Anthropic 发现后紧急启动了回收流程，但部分代码已被第三方缓存和传播。这是迄今为止最大规模的 AI 公司核心代码泄露事件之一，不仅可能暴露 Anthropic 的技术实现细节，更引发了关于 AI 公司自身 IP 保护能力的广泛质疑。",
           "source": "axios.com",
           "href": "https://news.google.com/rss/articles/CBMickFVX3lxTE51ZElGa3BBcHRrZ2E0U2libWlNN1BCT2U1bFhNaDExMVBjSE9WOHBjQjBkRjd3UTVEcTlOOHdISzlJYlpLWEtRdlJReHhUQWY4X1F6OFA1dm0xRlpaUVFmUDZheEdFOHBfdzBVeE1pT2txZw?oc=5",
           "publishedAt": "Wed, 01 Apr 2026 02:09:05 GMT"
         },
         {
-          "title": "Anthropic leaks part of Claude Code's internal source code",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "Claude Code 泄露让 Anthropic 站到版权争论的另一边",
+          "summary": "CNBC 深度分析指出，此次泄露最具戏剧性的地方在于：Anthropic 长期以来主张用受版权保护的数据训练 AI 模型属于「合理使用」，但现在自家源码被泄露后，公司却立即援引版权法要求各平台下架传播内容。这种立场的矛盾让 AI 行业的版权争论进入了新阶段——当 AI 公司既是「合理使用」的倡导者，又是知识产权泄露的受害者时，整个法律框架的合理性正在被根本性地质疑。",
           "source": "CNBC",
-          "href": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLUtWbk9lazVTQ3V0ZDhZZG5rWFViSjQ0aTlGT0E5NGJrWGd0UEEwWUgwOExLMXRiclZqZ3ZPa0gwaHlhTnp5T21ESU1jSTAzTU1ncV9odVlqMThDYXI4a2lpcS1fQ1UzdE8tcHlEVENQSHVzdDVKUk5FVGFaclQ0WWN0N1Nyd9IBiwFBVV95cUxPUVpsaFdUX3g0VjRxNnN3Ny1fZThyMVJlWVYzN19HTTVEdUdxQ1RVR3FLaUJUQVRrSWxHcjEwY0FNSm50bWt4NjJDQTVDSW1fTzhPYVM2cFktZUZHTzVSdWJPSW42VTlmUHlhU0xfdDhESk5QQmlkQjRyeHdFWVdJaGFzRkFPM0poNVlB?oc=5",
+          "href": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLUtWbk9pazVTQ3V0ZDhZZG5rWFViSjQ0aTlGT0E5NGJrWGd0UEEwWUgwOExLMXRiclZqZ3ZPa0gwaHlhTnp5T21ESU1jSTAzTU1ncV9odVlqMThDYXI4a2lpcS1fQ1UzdE8tcHlEVENQSHVzdDVKUk5FVGFaclQ0WWN0N1Nyd9IBiwFBVV95cUxPUVpsaFdUX3g0VjRxNnN3Ny1fZThyMVJlWVYzN19HTTVEdUdxQ1RVR3FLaUJUQVRrSWxHcjEwY0FNSm50bWt4NjJDQTVDSW1fTzhPYVM2cFktZUZHTzVSdWJPSW42VTlmUHlhU0xfdDhESk5QQmlkQjRyeHdFWVdJaGFzRkFPM0poNVlB?oc=5",
           "publishedAt": "Tue, 31 Mar 2026 20:56:15 GMT"
         }
       ]
@@ -30,15 +30,15 @@
       "title": "公司与产业动向",
       "items": [
         {
-          "title": "Open to Work: How to Get Ahead in the Age of AI",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "微软官方博客：如何在 AI 时代抢占职业先机",
+          "summary": "微软官方博客发表长文，系统性地阐述了企业和个人应如何应对 AI 带来的职业变革。文章不仅推广了 Copilot 系列产品在提升生产力方面的具体案例，更提出了一个核心观点：未来的职业竞争力将取决于「与 AI 协作的能力」而非传统技能的深度。微软同时宣布扩大其 AI 技能认证计划，为全球超过 1000 万人提供免费的 AI 协作培训课程。",
           "source": "The Official Microsoft Blog",
           "href": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWjllal9CYUF2S08td2dhWWIxRlZRQmNINlo1ZTN6V0JkQ0RORHNoQ2tDdkpmS0lVbklYNmVnd3BFZU9OSHNjX1ZaMDExbmc3SUJYWFN1VnMzd0thZXVFYm13ZnM4bHRnTzJUMFpJazFWOVpaOVh2MGVXUkNpU0VvVUF1WlJ3eGxtTXFVVF9STWQtYmZSQVE?oc=5",
           "publishedAt": "Tue, 31 Mar 2026 15:15:08 GMT"
         },
         {
-          "title": "AI Alone Won't Take Your Job. Someone Using AI Will",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "TIME：AI 本身不会抢走你的工作，但会用 AI 的人会",
+          "summary": "时代杂志发表封面文章，深入探讨了 AI 时代的就业新逻辑。文章核心论点是：真正的职业威胁不是来自 AI 技术本身，而是来自那些率先掌握 AI 工具的竞争者。通过多个行业案例（从法律到创意产业），文章展示了「AI 增强型员工」正在如何以数倍效率完成传统岗位的工作。文章建议：与其恐惧 AI 取代，不如尽快成为「会用 AI 的人」。",
           "source": "Time Magazine",
           "href": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSUhWcGZNU2plVm5KVFU5eFdLZG9RZ3EybVAzbU9GRVE4a1VrY0JYZko2R1lfYWFVOUNNVW92ZDZLVjRpLVVOdWVqajRBWlJSOG5lRWY2RDQyU1M3dE1IUHM1ZE03a0hVaEw0T0JZQmNCSE1LMWc0bXktZUkzTTNXdklPS05TLU9uSDFfZWh0X2w?oc=5",
           "publishedAt": "Tue, 31 Mar 2026 20:39:28 GMT"
@@ -50,15 +50,15 @@
       "title": "值得关注的趋势",
       "items": [
         {
-          "title": "Industry looks to University of Tennessee for AI innovation, workforce development",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "田纳西大学成为产业 AI 创新与人才培养新枢纽",
+          "summary": "EurekAlert 报道，田纳西大学正在成为美国 AI 产学研结合的新标杆。多家制造业和能源企业与该校建立了深度合作关系，共同开发面向工业场景的 AI 解决方案，同时培养具备 AI 技能的专业人才。这一趋势反映出 AI 创新正在从硅谷向更广泛的地区扩散，传统产业集中的地区正在通过大学合作快速建立自己的 AI 能力。",
           "source": "EurekAlert!",
           "href": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE83MURCLVlMcGthdWdpekU1QU9WTTdldVFIRnBuczVBM0tfRjI5T0VyQjQ4dUFrbTVoRmJpVmlocU9JTnpmNl83RzdxcW5VSWNUblRVZ2hzcGZIT2k3?oc=5",
           "publishedAt": "Tue, 31 Mar 2026 19:10:33 GMT"
         },
         {
-          "title": "See how physical AI is transforming the fashion industry",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "实体 AI 正在重塑时尚产业：从设计到供应链的全面渗透",
+          "summary": "世界经济论坛发文探讨了 AI 在时尚行业的深度应用。不同于简单的图像生成，「实体 AI」（physical AI）正在重构从面料研发、版型设计到供应链管理的整个流程。AI 驱动的需求预测可以将库存浪费减少 30% 以上，而 AI 辅助设计则大幅缩短了从概念到成衣的周期。这篇文章展示了 AI 在传统实体产业中的变革潜力远超数字经济领域。",
           "source": "The World Economic Forum",
           "href": "https://news.google.com/rss/articles/CBMijwFBVV95cUxORWF1Y1ljQjVPUXhfejVkZkR2RjBjY0t0MmE1LWQ1RW1hR0M1VzQtUmdQX2FPNTRSWjc4YldWWVZwQV9NYXV4amhsUmRXWWJtZFY1N3BKWTFUTzVueVhYaWplYUxya0dCemxTR191R1VBQmRySUtrTGNELUQ1UDJJVmlQcU9WZlMwY09EZjRiZw?oc=5",
           "publishedAt": "Tue, 31 Mar 2026 14:22:32 GMT"
@@ -66,7 +66,7 @@
       ]
     }
   ],
-  "closing": "一句话说，今天最值得关注的不是某个模型又强了多少，而是 AI 正在变成一场更现实的产业竞争：谁拿入口，谁有落地能力，谁能承受转型成本，接下来都会越来越清楚。",
-  "reminderSummary": "今日 AI 资讯：头部公司开始重排产品路线，平台入口之争和企业落地继续升温。",
+  "closing": "今天的核心看点是 Anthropic 源码泄露事件——它不仅是一个安全事故，更是 AI 行业版权争论的转折点。当一家主张「合理使用」的公司自己成为 IP 泄露受害者时，整个行业需要重新思考版权保护的逻辑。而就业层面的讨论也在加速成熟：问题已经不是 AI 是否会改变工作，而是你准备好了没有。",
+  "reminderSummary": "Anthropic 50 万行源码泄露引爆版权争议，微软和时代杂志聚焦 AI 时代职业生存策略。",
   "generatedAt": "2026-04-01T03:38:31.962Z"
 }

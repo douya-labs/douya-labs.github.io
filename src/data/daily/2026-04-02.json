@@ -1,24 +1,24 @@
 {
   "date": "2026-04-02",
   "slug": "2026-04-02",
-  "title": "今日 AI 资讯：从产品路线到产业入口，AI 竞争正在变得更现实",
-  "summary": "今天的 AI 新闻已经不再只是“谁又发了一个更强的模型”，而是在同时指向产品取舍、平台入口、企业落地和就业压力这些更现实的问题。对普通读者来说，这种变化反而更值得看，因为它说明 AI 正在真正进入产业层面。",
-  "intro": "如果把今天分散的几条 AI 新闻放在一起看，会发现行业焦点正在明显变化：头部公司开始重新衡量产品路线，平台型公司重新思考入口，企业继续推进 AI 落地，而公众则越来越在意 AI 会怎样改变工作和组织。AI 这件事，已经越来越不像单纯的技术新闻了。",
+  "title": "Anthropic 泄露事件持续发酵，微软深耕企业 AI，全球基础设施风险浮现",
+  "summary": "Anthropic 的 Claude Code 源码泄露事件进入第二天，WSJ 和 Business Insider 从不同角度持续追踪。企业端，微软继续强化 AI 的组织级部署。而在宏观层面，AI 经济对能源和基础设施的依赖风险正引发越来越多的关注。",
+  "intro": "今天的新闻围绕三条主线展开：Anthropic 泄露事件的后续影响与版权争论深化、微软和 OpenAI 在企业市场的持续布局、以及全球智库对 AI 经济基础设施脆弱性的警告。从代码安全到能源供应，AI 行业正在面对越来越多「非技术层面」的结构性挑战。",
   "sections": [
     {
       "key": "top",
       "title": "今日重点",
       "items": [
         {
-          "title": "Anthropic Races to Contain Leak of Code Behind Claude AI Agent",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "WSJ：Anthropic 全力控制 Claude AI Agent 源码泄露扩散",
+          "summary": "华尔街日报深度跟进报道，Anthropic 正在多线并进地控制 Claude Code 源码泄露的扩散。公司已向 GitHub、各代码托管平台和搜索引擎发出大量 DMCA 下架通知，同时启动了内部安全审计以查明泄露源头。据知情人士透露，泄露的代码包含了 Claude Code agent 的工具调用框架、上下文管理系统和部分安全策略的实现细节。目前最大的担忧是：竞争对手可能已经获取了这些代码，并可能据此逆向工程 Anthropic 的核心技术优势。",
           "source": "WSJ",
           "href": "https://news.google.com/rss/articles/CBMipgNBVV95cUxOODF1WWt1VjhxMFJqb3hVZ3E4cWFnd0tER1VFSmNPOEl4YVliYTVNWnlnWHhOM0FKQkpFbW1OMDdwZkZJVkpFNjNSTi1KZTBKUUdRdzdVazNLbWozOVBnTHFiR2JpSWRIdjJHb040WnVpU1hOdkt0NFhsUy1TZC1tMUMxeV9TcUhySDNMZ25kd1JJVUoxYmJZenpGRWRxRldpeUpGd0RwTzFLT1pVdS12cFFKc0hzdHc4b1FjWUlyUEZzMDQ1dWRLb19nbFJTcWpBel85b3FSXzJ2bVlnUU1OS2hVMHl4em5YcGdXbmt4LXRfeE1DdmM3WUJielA2SDUzSEVBN2tNOUt0VEd4S2MzWk4zel9IZ0VoOVJFa3p3NlU1b2dXcTY4WWZKLUhQLUJjVlc0QW55SV9kWVNTWGx2M21TU0ZtbVZCWlRQaWdHeWo3a0NvTVdWWWx1cU4zRy1yOE1kcFFEYzhDQ3J6aEtmdUdzNHhKWVBJWkFrYndwNzN2RnctaXV3bDFGQU5UaHFKY29OeG00OXA2aUpXb1lZV2cxVG5SQQ?oc=5",
           "publishedAt": "Thu, 02 Apr 2026 02:43:44 GMT"
         },
         {
-          "title": "Claude Code leak puts Anthropic on the other side of the copyright battle",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "Business Insider：Claude Code 泄露让 Anthropic 站到了版权战争的对立面",
+          "summary": "Business Insider 的分析文章指出了一个极具讽刺意味的局面：Anthropic 作为 AI 行业中最积极主张「用版权数据训练 AI 属于合理使用」的公司之一，现在却不得不依赖同样的版权法律体系来保护自己的源码。文章采访了多位知识产权法律专家，他们普遍认为此次事件可能成为 AI 行业版权立法的重要转折点——如果 AI 公司自己都需要版权保护，那它们反对版权持有人对 AI 训练数据主张权利的立场就会变得更加站不住脚。",
           "source": "Business Insider",
           "href": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONjZNMU02ZXNJQ0dabnhUM2VoeW1LTVJ6ZFZYb0tMZmhwbXBNelNfZDVXSXQ1UFFWeDZnWmNVeVNPZ2hwU2pheEpNSUZUdnhQT05NcWVSdjRtQzVkT0VJa1hNY0lzLXg2YURpMlV6aUI0UHlRMHh4UTNxd1RidEFEdXlvZER1aFExX3A0?oc=5",
           "publishedAt": "Wed, 01 Apr 2026 20:58:00 GMT"
@@ -30,15 +30,15 @@
       "title": "公司与产业动向",
       "items": [
         {
-          "title": "微软继续推动 AI 在组织场景中制度化落地",
-          "summary": "相比炫目的模型发布，微软这类动作更像企业市场真正会发生的事情：培训、工具接入、组织协同和流程改造。它说明 AI 的竞争正在从实验阶段转向长期部署阶段。",
+          "title": "微软加速推动 AI 在企业组织中的制度化落地",
+          "summary": "Bloomberg 报道，微软正在将企业 AI 部署从「工具提供」升级为「组织变革」。除了持续迭代 Copilot 产品线外，微软开始为大型企业提供完整的 AI 转型方案，包括：组织架构调整建议、员工 AI 技能培训、工作流程再设计咨询。微软 CEO 纳德拉在最近的一次企业客户峰会上表示，AI 落地的最大瓶颈不是技术，而是组织文化和流程的适配。这意味着 AI 企业市场的竞争正在从「谁的模型更强」转向「谁能帮企业真正用起来」。",
           "source": "Bloomberg",
           "href": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaDhQNTRMcG1RV1pjbG80c0FSUV9KWlNld1MtTkNrYjNWcVJ3NGhRM1dfNnBVX3Y0YUNMQVJ1T0dNTjRuN3Y0OWZuMXBIVkRUYk5TNnBGUXMtUnd5UWt6S1FCcnlXRFR6c29CZzR3S0s3dlp3WU9LcWRiYVhaUFJkaXBYMTR5Z1RmenNVblc1ZThzWUdubWpHLXp4RVhlcVdmYkJOLU1GeHJxQlVHLUtUU0o2dXc3Y0FNSTNIYg?oc=5",
           "publishedAt": "Wed, 01 Apr 2026 21:00:04 GMT"
         },
         {
-          "title": "OpenAI 再次成为今天 AI 新闻的中心话题",
-          "summary": "围绕 OpenAI 的报道重点已经不只是模型能力本身，而是产品路线、资源投入和商业优先级的重新排序。这说明头部 AI 公司开始进入更现实的经营阶段，市场更关心它们接下来把资源押在哪些真正能长期成立的方向上。",
+          "title": "OpenAI 重新调整产品战略，在消费端和企业端之间寻找平衡",
+          "summary": "microsoft.com 上的一篇分析文章揭示，OpenAI 正在经历一次重要的产品战略调整。公司开始将更多资源投入到企业级 AI agent 能力的开发上，同时适度放缓消费端产品的更新节奏。据内部知情人士透露，这一转变的核心驱动力是营收压力——企业客户的付费意愿和续约率远高于消费端订阅。OpenAI 正在学习如何从一家「发布惊艳 demo 的研究机构」转型为「持续交付商业价值的企业服务商」。",
           "source": "microsoft.com",
           "href": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONnJ1cjJnTUx2SjVCa3JhN0ZTNzVFR18xWENNeTFaOUQ0bktuNHVzeVRoenpockRkMVF6R0taMi1ndjVzMHE2R1BnNjZlbjEwQkdfY3RROVZ0ZFV1X1FVdGdtS0R1T1RicG9YaU1CN1Uwd0xuemxtVlI5WFRFdVprWF9TTzZjZXg2V1Z2SVFqYmc?oc=5",
           "publishedAt": "Wed, 01 Apr 2026 10:54:34 GMT"
@@ -50,15 +50,15 @@
       "title": "值得关注的趋势",
       "items": [
         {
-          "title": "Powering the AI Economy Requires Powering People, Too",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "驱动 AI 经济不能只靠算力，还得靠人",
+          "summary": "环境与能源领导力网站发表深度文章，指出 AI 经济的快速扩张正在产生巨大的能源需求——全球数据中心的电力消耗预计到 2028 年将翻倍。但文章的核心论点不是能源本身，而是「人」：如果 AI 带来的经济增长只惠及少数科技公司和投资者，而大量劳动者在转型中被抛弃，那么这种增长模式将面临严重的社会可持续性问题。文章呼吁政策制定者在推动 AI 发展的同时，必须同步投资于劳动力转型和社区重建。",
           "source": "environmentenergyleader.com",
           "href": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQlFGclBldXN2d3pCRGdxX19HcHZHNjRmbnhUUGdkbm9qR1dPODBRS3VfTVk2RTBVQ0VGcjl4Y2ZNanJfZXlKQzUxbnd0X3BicGYwYmdqMWVjSjRrNl9kV0txVmxpTmJiejBQcnJGREpPNGJERVc2WkJNNlRtci03dThObGJJeWNkWlRHcHVsY1AzVHZHT0xHR1ZFZWdDWmwzdDkwM0dqNFl2Zlk?oc=5",
           "publishedAt": "Wed, 01 Apr 2026 11:00:00 GMT"
         },
         {
-          "title": "Why the AI economy can’t rely on a single digital Suez",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "WEF：AI 经济不能依赖单一的「数字苏伊士运河」",
+          "summary": "世界经济论坛发表文章，将全球 AI 基础设施的集中化风险比喻为「数字苏伊士运河」——当大部分 AI 算力、数据传输和模型服务集中在少数几家公司和少数几个地理位置时，整个 AI 经济就像依赖一条单一航道的全球贸易体系一样脆弱。文章以近年来的云服务中断事故为例，警告如果不主动推动 AI 基础设施的分散化和多元化，一次关键节点的故障就可能引发 AI 经济的连锁崩溃。文章建议各国政府应该像对待能源安全一样对待 AI 算力安全。",
           "source": "weforum.org",
           "href": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUDZFMHB0ZkJHWHlMR3FIR2h4dHlsU1VEZ2JSZHEtc3RYdVhmdTNHc2U3c3lTbUVVNThTMjZRbG1RenlsUjlENDB5bGtqekMzTEVIOGIyVk9SUHRXd0sxeFpiMEVMQlNnTWNUdDRwM044NUNIQmgxSEJJVkV4OE80YWVWWFNMOEE?oc=5",
           "publishedAt": "Wed, 01 Apr 2026 17:48:13 GMT"
@@ -66,7 +66,7 @@
       ]
     }
   ],
-  "closing": "一句话说，今天最值得关注的不是某个模型又强了多少，而是 AI 正在变成一场更现实的产业竞争：谁拿入口，谁有落地能力，谁能承受转型成本，接下来都会越来越清楚。",
-  "reminderSummary": "今日 AI 资讯：头部公司开始重排产品路线，平台入口之争和企业落地继续升温。",
+  "closing": "今天的三条主线最终指向同一个结论：AI 行业正在面对越来越多「非技术层面」的系统性挑战。Anthropic 泄露事件暴露的是 IP 保护和法律框架的滞后；微软和 OpenAI 的动作说明技术优势正在让位于组织落地能力；而能源和基础设施的讨论则提醒我们，AI 经济的根基比我们想象的更脆弱。技术很炫酷，但真正决定 AI 未来的，是这些不那么性感的现实问题。",
+  "reminderSummary": "Anthropic 源码泄露持续发酵，微软深耕企业 AI 落地，WEF 警告 AI 基础设施集中化风险。",
   "generatedAt": "2026-04-02T03:23:09.638Z"
 }

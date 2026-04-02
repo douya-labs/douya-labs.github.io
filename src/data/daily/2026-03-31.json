@@ -1,26 +1,26 @@
 {
   "date": "2026-03-31",
   "slug": "2026-03-31",
-  "title": "今日 AI 资讯：从产品路线到产业入口，AI 竞争正在变得更现实",
-  "summary": "今天的 AI 新闻已经不再只是“谁又发了一个更强的模型”，而是在同时指向产品取舍、平台入口、企业落地和就业压力这些更现实的问题。对普通读者来说，这种变化反而更值得看，因为它说明 AI 正在真正进入产业层面。",
-  "intro": "如果把今天分散的几条 AI 新闻放在一起看，会发现行业焦点正在明显变化：头部公司开始重新衡量产品路线，平台型公司重新思考入口，企业继续推进 AI 落地，而公众则越来越在意 AI 会怎样改变工作和组织。AI 这件事，已经越来越不像单纯的技术新闻了。",
+  "title": "今日 AI 资讯：加州 AI 行政令落地，公众信任危机加剧，AI 就业恐慌与现实的落差",
+  "summary": "加州发布 AI 行政令引领地方监管，苹果持续深化 AI 平台战略，微软推动企业 AI 制度化落地，而一项新民调揭示了 AI 使用率飙升与公众信任暴跌的矛盾现象。",
+  "intro": "今天的 AI 新闻主题鲜明：监管、信任和落地。加州率先出手发布 AI 行政令，微软在企业侧持续推进，而公众对 AI 的态度正在出现使用增长与信任下降并存的复杂局面。另外，关于 AI 替代就业的讨论也在经历理性回归。",
   "sections": [
     {
       "key": "top",
       "title": "今日重点",
       "items": [
         {
-          "title": "What to Know About California’s Executive Order on A.I.",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "加州发布 AI 行政令，地方监管进入实操阶段",
+          "summary": "纽约时报报道，加州州长签署了一项关于人工智能的行政令，涵盖政府部门 AI 使用规范、透明度要求和风险评估机制。作为美国科技产业的核心州，加州此举具有风向标意义——它不仅影响硅谷的 AI 公司，也可能成为其他州效仿的模板。行政令重点关注政府采购中 AI 系统的公平性和问责机制，要求各部门在部署 AI 前进行影响评估。这标志着美国 AI 监管正从联邦层面的讨论走向地方层面的实际执行。",
           "source": "The New York Times",
           "href": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmozRmFqSk42XzJFaFFrc2g0TFh4cW9jcVA2NnIzLURldkJpOHJVTVczQ2hzLWdfSnJSRENkMU9zYmxGTXIxQWxWS0JXSGY1aWU4Zy1RV2xuWE55dl9SUUhzMFRPUE5qbE1sODA3cVJMY3k2SGpFSDZpOGtVWEFOc3FEUmxlMlE?oc=5",
           "publishedAt": "Tue, 31 Mar 2026 00:39:15 GMT"
         },
         {
-          "title": "苹果正在把 AI 当成平台入口能力来重新设计",
-          "summary": "如果苹果的调整方向属实，那么它看重的就不只是某个聊天功能，而是 AI 如何更深地进入系统入口、应用分发和搜索式体验。对行业来说，这意味着 AI 竞争越来越像平台战争，而不只是模型竞赛。",
+          "title": "苹果 AI 战略持续深化：从聊天功能到系统级平台能力",
+          "summary": "Computerworld 的深度分析指出，苹果正在将 AI 能力从独立的助手功能扩展为贯穿整个操作系统的平台级能力。具体来说，AI 将更深入地整合到 Spotlight 搜索、应用推荐、系统设置自动化等核心交互场景中。这种策略与 Google 和微软直接推出独立 AI 产品的路线截然不同——苹果选择的是「隐形 AI」，让用户在不知不觉中使用 AI 能力。这一差异化定位可能在隐私敏感用户群体中获得独特优势。",
           "source": "Computerworld",
-          "href": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYkxFbnhLQWVUNDg3MDZWVl9tYmNBS0FRQjFRX21pc21RaVZxS21jYTY1LW41ai1Wd3VSajRqSUh3S1VxaGZiOXhUYkozSXpfMU5BblFBTHhWdENyZFhWUlpqVk5IN3k1NDZYNWlRSUhhM2U3d0xrTE5sckhtemhESFgtRFZ4MmVmdkI4Y1dHeG9Rdw?oc=5",
+          "href": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYkxFbnhLQWVUNDg3MDZWVl9tYmNBS0FRQjFRX21pc21RaVZxS21jYTY1LW41ai1Wd3VSajRqSUh3S1VxaGZiOXhUYkozSXpfMU5BblFBTHhWdENyZFhWUlpqVk5IN3k1NDZYNWlRSUhhM2U3d0xrTE5sckhzemhESFgtRFZ4MmVmdkI4Y1dHeG9Rdw?oc=5",
           "publishedAt": "Mon, 30 Mar 2026 17:39:39 GMT"
         }
       ]
@@ -30,17 +30,17 @@
       "title": "公司与产业动向",
       "items": [
         {
-          "title": "微软继续推动 AI 在组织场景中制度化落地",
-          "summary": "相比炫目的模型发布，微软这类动作更像企业市场真正会发生的事情：培训、工具接入、组织协同和流程改造。它说明 AI 的竞争正在从实验阶段转向长期部署阶段。",
+          "title": "微软持续推动 AI 企业级制度化落地",
+          "summary": "微软正在系统性地将 AI 工具嵌入企业工作流程，不仅仅是提供 Copilot 产品，更包括配套的员工培训计划、组织变革咨询和流程再造方案。这种「全栈式」企业 AI 服务策略让微软在 B2B 市场形成了显著壁垒。相比之下，其他 AI 公司更多停留在提供工具层面，而微软正在深入到企业组织变革层面。这预示着企业 AI 市场的竞争将越来越不只是比拼技术，而是比拼「谁能帮企业真正用起来」。",
           "source": "Sahm",
           "href": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMTdkM0x2cUlsVEQzOHNMSFF3RnRmRk9oWk5XTnA0aFRROS0zTDZIYjRfdFp6cE1YZGs3eFU1eE53UGdxX05DcFU4TnJUcnJjb0tVcFFRcjUwajhWZGwzNFBMT2FwWjFYaFB3R2kxbVpveDhyM1R1RVpSZGpTMFpyUXFXUUdhNk45Y3pLcWt5S0RRYnlaY1Fub2E3dFhsV3JHejdfMGJBSHctSkJmVjlXQVdSdzdRYXFfdVFmdXgwTDVLN0o3TV9iRUZR?oc=5",
           "publishedAt": "Mon, 30 Mar 2026 17:10:18 GMT"
         },
         {
-          "title": "AI Adoption Surges While Trust Plummets in New Poll",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "新民调揭示矛盾：AI 使用率飙升，公众信任却在暴跌",
+          "summary": "The Tech Buzz 发布的最新民调显示了一个令人关注的矛盾现象：AI 工具的日常使用率在过去一年中大幅增长，但公众对 AI 系统的信任度却显著下降。调查指出，用户虽然在效率驱动下越来越多地使用 AI，但对 AI 的准确性、隐私保护和决策透明度的担忧也在同步加深。这种「用着但不信任」的状态对行业来说是一个危险信号——它可能导致监管压力加大，也可能在某个负面事件后引发使用率的突然回落。",
           "source": "The Tech Buzz",
-          "href": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcHVVOENUYVhmRlBaZmxfQ0I1NlNDS2E3Ym4wWnRNNVJWNFRmQTI4MlJISGFWTmFBMllkeXg5TzY0WlQ1SmtPeGJKd0xyOEIwc0ZQOGNqQjhZM0Uwd19UM2JvNFpXblVkWFctNVdNb1h0STRnRDNLU2ZLTl9YLTNabG81NTFKT3hfQXBjSw?oc=5",
+          "href": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcHVVOENUYVhmRlBaZmxfQ0I1NlNDS2E3Ym4wWnRNNVJWNFRmQTI4MlJISGFWTmFBMllkeXg5TzY0WlQ1SmtPeGJKd0xyOEIwc0ZQOGNqQjhZM0Uwd19UM2JvNFpXblVkWFctNVdNb1h0STRnRDNLU2ZLTl9YLTNabG81NTFLT3hfQXBjSw?oc=5",
           "publishedAt": "Mon, 30 Mar 2026 20:43:00 GMT"
         }
       ]
@@ -50,15 +50,15 @@
       "title": "值得关注的趋势",
       "items": [
         {
-          "title": "Meet the 2026 AI 75 Innovators: From the C‑Suite to the Lab Bench in Dallas-Fort Worth",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "达拉斯-沃思堡 2026 AI 75 创新者榜单发布",
+          "summary": "Dallas Innovates 评选出了 2026 年达拉斯-沃思堡地区的 75 位 AI 创新者，覆盖从企业高管到实验室研究员的各个层面。这份榜单反映出 AI 创新正在从硅谷向美国其他科技中心扩散，得克萨斯的低成本和友好商业环境正在吸引越来越多的 AI 人才和企业。榜单中涵盖医疗 AI、金融科技、制造业智能化等多个领域，展现了 AI 应用的多元化趋势。这也说明 AI 产业已经从「少数精英公司的游戏」走向了更广泛的区域性创新生态。",
           "source": "Dallas Innovates",
           "href": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBTeldRZ3NEV3VvM3V3V1VVQkdwTmF2RE5rRHRhcXhpaTRKdG80NVd5SXl5MEJfMmxlRkVFenZZTnZQaW1BTHJfSk5QdU8zVjQ?oc=5",
           "publishedAt": "Mon, 30 Mar 2026 15:38:10 GMT"
         },
         {
-          "title": "AI Job Panic Still Outruns the Evidence - American Enterprise Institute",
-          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "title": "AI 就业恐慌仍然远超实际证据",
+          "summary": "美国企业研究所（AEI）发表分析文章指出，当前公众对 AI 取代工作的恐慌程度远远超过了实际数据所支持的水平。文章援引多项劳动力市场数据表明，AI 带来的岗位净消失数量目前仍然有限，更多情况下是岗位职能的重新定义而非简单替代。作者认为，媒体的夸大报道和科技公司的营销话术共同制造了不必要的焦虑。不过文章也承认，长期影响仍存在不确定性，呼吁以数据而非情绪来指导政策制定。",
           "source": "American Enterprise Institute - AEI",
           "href": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9oeUNDMWVSYWQ4N0NWXzRUWEVfcVU4RGhUcnljMmdMWnJuaDlBV0xjdnFQYzNBcGozVFZZNlNIQ19xazFSWDhqOGphU2VLcVJZQmExanZXdDlqZkpsZFpySlZmUGNpVFU2ejdZcGphOUVBbEVxRU5kMXRn?oc=5",
           "publishedAt": "Mon, 30 Mar 2026 19:54:42 GMT"
@@ -66,7 +66,7 @@
       ]
     }
   ],
-  "closing": "一句话说，今天最值得关注的不是某个模型又强了多少，而是 AI 正在变成一场更现实的产业竞争：谁拿入口，谁有落地能力，谁能承受转型成本，接下来都会越来越清楚。",
-  "reminderSummary": "今日 AI 资讯：头部公司开始重排产品路线，平台入口之争和企业落地继续升温。",
+  "closing": "今天最值得注意的信号是 AI 行业的「信任赤字」：技术在加速渗透，但公众信任和监管制度都还没跟上。加州的行政令是制度回应的开始，而苹果的隐形 AI 策略也许是对「信任问题」的一种产品级解法。接下来，谁能在推进 AI 落地的同时重建公众信任，谁就拿到了下一阶段的关键优势。",
+  "reminderSummary": "今日 AI 资讯：加州发布 AI 行政令，AI 使用率飙升但信任暴跌，苹果和微软分别推进平台级和企业级 AI 战略。",
   "generatedAt": "2026-03-31T03:26:56.773Z"
 }
