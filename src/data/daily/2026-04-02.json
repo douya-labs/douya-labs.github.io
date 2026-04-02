@@ -1,0 +1,72 @@
+{
+  "date": "2026-04-02",
+  "slug": "2026-04-02",
+  "title": "今日 AI 资讯：从产品路线到产业入口，AI 竞争正在变得更现实",
+  "summary": "今天的 AI 新闻已经不再只是“谁又发了一个更强的模型”，而是在同时指向产品取舍、平台入口、企业落地和就业压力这些更现实的问题。对普通读者来说，这种变化反而更值得看，因为它说明 AI 正在真正进入产业层面。",
+  "intro": "如果把今天分散的几条 AI 新闻放在一起看，会发现行业焦点正在明显变化：头部公司开始重新衡量产品路线，平台型公司重新思考入口，企业继续推进 AI 落地，而公众则越来越在意 AI 会怎样改变工作和组织。AI 这件事，已经越来越不像单纯的技术新闻了。",
+  "sections": [
+    {
+      "key": "top",
+      "title": "今日重点",
+      "items": [
+        {
+          "title": "Anthropic Races to Contain Leak of Code Behind Claude AI Agent",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "WSJ",
+          "href": "https://news.google.com/rss/articles/CBMipgNBVV95cUxOODF1WWt1VjhxMFJqb3hVZ3E4cWFnd0tER1VFSmNPOEl4YVliYTVNWnlnWHhOM0FKQkpFbW1OMDdwZkZJVkpFNjNSTi1KZTBKUUdRdzdVazNLbWozOVBnTHFiR2JpSWRIdjJHb040WnVpU1hOdkt0NFhsUy1TZC1tMUMxeV9TcUhySDNMZ25kd1JJVUoxYmJZenpGRWRxRldpeUpGd0RwTzFLT1pVdS12cFFKc0hzdHc4b1FjWUlyUEZzMDQ1dWRLb19nbFJTcWpBel85b3FSXzJ2bVlnUU1OS2hVMHl4em5YcGdXbmt4LXRfeE1DdmM3WUJielA2SDUzSEVBN2tNOUt0VEd4S2MzWk4zel9IZ0VoOVJFa3p3NlU1b2dXcTY4WWZKLUhQLUJjVlc0QW55SV9kWVNTWGx2M21TU0ZtbVZCWlRQaWdHeWo3a0NvTVdWWWx1cU4zRy1yOE1kcFFEYzhDQ3J6aEtmdUdzNHhKWVBJWkFrYndwNzN2RnctaXV3bDFGQU5UaHFKY29OeG00OXA2aUpXb1lZV2cxVG5SQQ?oc=5",
+          "publishedAt": "Thu, 02 Apr 2026 02:43:44 GMT"
+        },
+        {
+          "title": "Claude Code leak puts Anthropic on the other side of the copyright battle",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "Business Insider",
+          "href": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONjZNMU02ZXNJQ0dabnhUM2VoeW1LTVJ6ZFZYb0tMZmhwbXBNelNfZDVXSXQ1UFFWeDZnWmNVeVNPZ2hwU2pheEpNSUZUdnhQT05NcWVSdjRtQzVkT0VJa1hNY0lzLXg2YURpMlV6aUI0UHlRMHh4UTNxd1RidEFEdXlvZER1aFExX3A0?oc=5",
+          "publishedAt": "Wed, 01 Apr 2026 20:58:00 GMT"
+        }
+      ]
+    },
+    {
+      "key": "company",
+      "title": "公司与产业动向",
+      "items": [
+        {
+          "title": "微软继续推动 AI 在组织场景中制度化落地",
+          "summary": "相比炫目的模型发布，微软这类动作更像企业市场真正会发生的事情：培训、工具接入、组织协同和流程改造。它说明 AI 的竞争正在从实验阶段转向长期部署阶段。",
+          "source": "Bloomberg",
+          "href": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaDhQNTRMcG1RV1pjbG80c0FSUV9KWlNld1MtTkNrYjNWcVJ3NGhRM1dfNnBVX3Y0YUNMQVJ1T0dNTjRuN3Y0OWZuMXBIVkRUYk5TNnBGUXMtUnd5UWt6S1FCcnlXRFR6c29CZzR3S0s3dlp3WU9LcWRiYVhaUFJkaXBYMTR5Z1RmenNVblc1ZThzWUdubWpHLXp4RVhlcVdmYkJOLU1GeHJxQlVHLUtUU0o2dXc3Y0FNSTNIYg?oc=5",
+          "publishedAt": "Wed, 01 Apr 2026 21:00:04 GMT"
+        },
+        {
+          "title": "OpenAI 再次成为今天 AI 新闻的中心话题",
+          "summary": "围绕 OpenAI 的报道重点已经不只是模型能力本身，而是产品路线、资源投入和商业优先级的重新排序。这说明头部 AI 公司开始进入更现实的经营阶段，市场更关心它们接下来把资源押在哪些真正能长期成立的方向上。",
+          "source": "microsoft.com",
+          "href": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONnJ1cjJnTUx2SjVCa3JhN0ZTNzVFR18xWENNeTFaOUQ0bktuNHVzeVRoenpockRkMVF6R0taMi1ndjVzMHE2R1BnNjZlbjEwQkdfY3RROVZ0ZFV1X1FVdGdtS0R1T1RicG9YaU1CN1Uwd0xuemxtVlI5WFRFdVprWF9TTzZjZXg2V1Z2SVFqYmc?oc=5",
+          "publishedAt": "Wed, 01 Apr 2026 10:54:34 GMT"
+        }
+      ]
+    },
+    {
+      "key": "view",
+      "title": "值得关注的趋势",
+      "items": [
+        {
+          "title": "Powering the AI Economy Requires Powering People, Too",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "environmentenergyleader.com",
+          "href": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPQlFGclBldXN2d3pCRGdxX19HcHZHNjRmbnhUUGdkbm9qR1dPODBRS3VfTVk2RTBVQ0VGcjl4Y2ZNanJfZXlKQzUxbnd0X3BicGYwYmdqMWVjSjRrNl9kV0txVmxpTmJiejBQcnJGREpPNGJERVc2WkJNNlRtci03dThObGJJeWNkWlRHcHVsY1AzVHZHT0xHR1ZFZWdDWmwzdDkwM0dqNFl2Zlk?oc=5",
+          "publishedAt": "Wed, 01 Apr 2026 11:00:00 GMT"
+        },
+        {
+          "title": "Why the AI economy can’t rely on a single digital Suez",
+          "summary": "这条新闻进入今天的 AI 观察范围，原因不在于它有多热闹，而在于它折射出了 AI 在产品、企业或社会层面的新变化。后续可以继续根据真实来源内容，把这段摘要再压得更像编辑稿。",
+          "source": "weforum.org",
+          "href": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUDZFMHB0ZkJHWHlMR3FIR2h4dHlsU1VEZ2JSZHEtc3RYdVhmdTNHc2U3c3lTbUVVNThTMjZRbG1RenlsUjlENDB5bGtqekMzTEVIOGIyVk9SUHRXd0sxeFpiMEVMQlNnTWNUdDRwM044NUNIQmgxSEJJVkV4OE80YWVWWFNMOEE?oc=5",
+          "publishedAt": "Wed, 01 Apr 2026 17:48:13 GMT"
+        }
+      ]
+    }
+  ],
+  "closing": "一句话说，今天最值得关注的不是某个模型又强了多少，而是 AI 正在变成一场更现实的产业竞争：谁拿入口，谁有落地能力，谁能承受转型成本，接下来都会越来越清楚。",
+  "reminderSummary": "今日 AI 资讯：头部公司开始重排产品路线，平台入口之争和企业落地继续升温。",
+  "generatedAt": "2026-04-02T03:23:09.638Z"
+}
